@@ -60,36 +60,96 @@ namespace wellnet
 
 		public patientListItem()
 		{
-			var firstNameLabel = new Label { FontAttributes = FontAttributes.Bold};
+			var firstNameLabel = new Label { 
+				FontAttributes = FontAttributes.Bold,
+				FontFamily = "HelveticaNeue-Medium",
+				FontSize = 22,
+				TextColor = Color.Black
+			
+			};
 			firstNameLabel.SetBinding(Label.TextProperty, "firstName");
 
-			var lastNameLabel = new Label { FontAttributes = FontAttributes.Bold};
-			firstNameLabel.SetBinding(Label.TextProperty, "lastName");
+			var lastNameLabel = new Label { 
+				FontAttributes = FontAttributes.Bold,
+				FontFamily = "HelveticaNeue-Medium",
+				FontSize = 22,
+				TextColor = Color.Black
+			};
+			lastNameLabel.SetBinding(Label.TextProperty, "lastName");
 
-			var bodyTempLabel = new Label {};
-			bodyTempLabel.SetBinding(Label.TextProperty, "bodyTemp");
+			var bodyTempLabel = new Label {
+				FontSize = 16,
+				TextColor = Color.FromHex ("#666")
+			};
+			bodyTempLabel.SetBinding(Label.TextProperty, "bodyTemp",stringFormat: "Temp: {0}`C");
 
-			var heartRateLabel = new Label {};
-			heartRateLabel.SetBinding(Label.TextProperty, "heartRate");
+			var heartRateLabel = new Label {
+				FontSize = 16,
+				TextColor = Color.FromHex ("#666")
+			};
+			heartRateLabel.SetBinding(Label.TextProperty, "heartRate", stringFormat: "Pulse: {0}");
 
-			var locationLabel = new Label {FontAttributes = FontAttributes.Italic};
-			locationLabel.SetBinding(Label.TextProperty, "location");
+			var locationLabel = new Label {
+				FontSize = 16,
+				TextColor = Color.FromHex ("#666")
+			};
+			locationLabel.SetBinding(Label.TextProperty, "location", stringFormat: "Room: {0}");
 
-			var statusLabel = new Label { TextColor = Color.Red };
-			statusLabel.SetBinding(Label.TextProperty, "Status");
+			var statusLabel = new Label {
+				FontAttributes = FontAttributes.Bold,
+				FontFamily = "HelveticaNeue-Medium",
+				FontSize = 22,
+				TextColor = Color.Black
+			};
+			statusLabel.SetBinding(Label.TextProperty, "status");
 
-			View = new StackLayout {
-				Spacing = 2,
-				Padding = 5,
+
+			var nameStack = new StackLayout {
+				Orientation = StackOrientation.Horizontal,
 				Children = {
 					firstNameLabel,
-					lastNameLabel,
-					bodyTempLabel,
-					heartRateLabel,
-					locationLabel,
-					statusLabel
-				},
+					lastNameLabel
+				}
 			};
+
+			var measurementStack = new StackLayout {
+				Orientation = StackOrientation.Horizontal,
+				Children = {
+					bodyTempLabel,
+					heartRateLabel
+				}
+			};
+
+			var profileStack = new StackLayout {
+				WidthRequest = 195,
+				Children = {
+					nameStack,
+					measurementStack
+
+				}
+			};
+			var statusStack = new StackLayout {
+				Children = {
+					statusLabel,
+					locationLabel
+
+				}
+			};
+			var combinedStack = new StackLayout {
+				Orientation = StackOrientation.Horizontal,
+				Padding = new Thickness(5),
+				Children = {
+					profileStack,
+					statusStack
+
+
+				}
+
+			};
+
+			this.View = combinedStack;
+
+
 		}
 	}
 
