@@ -16,7 +16,6 @@ namespace wellnet
 		{
 			// Handle when your app starts
 			DBInit db=new DBInit();
-
 		}
 
 		protected override void OnSleep ()

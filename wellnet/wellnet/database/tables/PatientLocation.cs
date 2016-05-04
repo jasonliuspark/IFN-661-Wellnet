@@ -7,8 +7,8 @@ namespace wellnet
 	{
 		[PrimaryKey]
 		public int PtID { get; set;}
-		public float x_coordinate { get; set;}
-		public float y_coordinate { get; set;}
+		public double x_coordinate { get; set;}
+		public double y_coordinate { get; set;}
 
 	}
 }
