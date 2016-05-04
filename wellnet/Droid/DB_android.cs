@@ -1,14 +1,18 @@
 ﻿using System;
 using System.IO;
 using Xamarin.Forms;
+using wellnet;
+using wellnet.Droid;
 using SQLite;
 
+[assembly:Dependency (typeof(DB_android))]
 namespace wellnet.Droid
-{
-	[assembly:Dependency (typeof(DB_android))]
+{	
 	public class DB_android:ISQLite
 	{
-		public DB_android (){}
+		public DB_android (){
+			
+		}
 		public SQLite.SQLiteConnection GetConnection()
 		{
 			var sqlFilename="wellnet.db3";

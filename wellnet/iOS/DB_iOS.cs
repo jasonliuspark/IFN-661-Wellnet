@@ -3,9 +3,12 @@ using System.IO;
 using Xamarin.Forms;
 using SQLite;
 using SQLitePCL;
+using wellnet;
+using wellnet.iOS;
+
+[assembly:Dependency(typeof (DB_iOS))]
 namespace wellnet.iOS
-{
-	[assembly:Dependency(typeof (DB_iOS))]
+{	
 	public class DB_iOS:ISQLite
 	{
 
