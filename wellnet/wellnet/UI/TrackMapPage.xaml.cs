@@ -5,12 +5,10 @@ using Xamarin.Forms;
 
 namespace wellnet
 {
-	public partial class PatientList : ContentPage
+	public partial class TrackMapPage : ContentPage
 	{
-		public PatientList ()
-		{   
-			this.Title = "Patient List";
-
+		public TrackMapPage ()
+		{
 			InitializeComponent ();
 		}
 	}
