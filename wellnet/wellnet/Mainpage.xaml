@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="wellnet.Mainpage">
+<!--<ContentPage.Resources>
+    <ResourceDictionary>
+      <OnPlatform x:Key="boxSize"
+                  x:TypeArguments="x:Double"
+                  iOS="50"
+                  Android="50"
+                  WinPhone="75" />
+                 
+    </ResourceDictionary>
+  </ContentPage.Resources>-->
+  <ListView x:Name="patientList">
+  	<ListView.ItemTemplate>
+  	  <DataTemplate>
+
+  	  </DataTemplate>
+  	</ListView.ItemTemplate>
+  </ListView>
+
+</ContentPage>

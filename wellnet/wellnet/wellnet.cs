@@ -9,13 +9,12 @@ namespace wellnet
 		public App ()
 		{
 			// The root page of your application
-			MainPage = new PatientList();
+			MainPage = new NavigationPage(new Mainpage());
 		}
 
 		protected override void OnStart ()
 		{
 			// Handle when your app starts
-			DBInit db=new DBInit();
 		}
 
 		protected override void OnSleep ()

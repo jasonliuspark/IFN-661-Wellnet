@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace wellnet
 {
-	public class Patient
+	public class PatientController
 	{
 		
 		public string PatientName 
