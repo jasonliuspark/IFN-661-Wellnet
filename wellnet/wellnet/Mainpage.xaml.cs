@@ -63,7 +63,7 @@ namespace wellnet
 			var firstNameLabel = new Label { 
 				FontAttributes = FontAttributes.Bold,
 				FontFamily = "HelveticaNeue-Medium",
-				FontSize = 22,
+				FontSize = 19,
 				TextColor = Color.Black
 			
 			};
@@ -72,25 +72,25 @@ namespace wellnet
 			var lastNameLabel = new Label { 
 				FontAttributes = FontAttributes.Bold,
 				FontFamily = "HelveticaNeue-Medium",
-				FontSize = 22,
+				FontSize = 19,
 				TextColor = Color.Black
 			};
 			lastNameLabel.SetBinding(Label.TextProperty, "lastName");
 
 			var bodyTempLabel = new Label {
-				FontSize = 16,
+				FontSize = 13,
 				TextColor = Color.FromHex ("#666")
 			};
 			bodyTempLabel.SetBinding(Label.TextProperty, "bodyTemp",stringFormat: "Temp: {0}`C");
 
 			var heartRateLabel = new Label {
-				FontSize = 16,
+				FontSize = 13,
 				TextColor = Color.FromHex ("#666")
 			};
 			heartRateLabel.SetBinding(Label.TextProperty, "heartRate", stringFormat: "Pulse: {0}");
 
 			var locationLabel = new Label {
-				FontSize = 16,
+				FontSize = 13,
 				TextColor = Color.FromHex ("#666")
 			};
 			locationLabel.SetBinding(Label.TextProperty, "location", stringFormat: "Room: {0}");
@@ -98,7 +98,7 @@ namespace wellnet
 			var statusLabel = new Label {
 				FontAttributes = FontAttributes.Bold,
 				FontFamily = "HelveticaNeue-Medium",
-				FontSize = 22,
+				FontSize = 19,
 				TextColor = Color.Black
 			};
 			statusLabel.SetBinding(Label.TextProperty, "status");
