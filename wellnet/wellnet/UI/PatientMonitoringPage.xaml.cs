@@ -40,10 +40,32 @@ namespace wellnet
 				FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label))
 			};
 			/*--------------*/
-			var OxygenSatuationLevel = new Label ();
-			var OxygenFigure = new Label ();
+			var OxygenSatuationLevel = new Label ()
+			{
+				Text="Oxygen Satuation: "+"normal",
+				TextColor=Color.Blue,
+				FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label))
+			};
+			var OxygenFigure = new Label ()
+			{
+				Text="95%",
+				TextColor=Color.Red,
+				FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label))
+			};
+			/*heart reate */
+			var HeartRateStatus = new Label ()
+			{ 
+				Text="Heart Rate: "+"normal",
+				TextColor=Color.Red,
+				FontSize=Device.GetNamedSize(NamedSize.Large,typeof(Label))		
+			};
 
-			var HeartRate = new Label ();
+			var HeartRateFigure = new Label ()
+			{
+				Text="75",
+				TextColor=Color.Blue,
+				FontSize=Device.GetNamedSize(NamedSize.Large,typeof(Label)),
+			};
 
 			var EcgMockup = new WebView ()
 			{
@@ -54,6 +76,8 @@ namespace wellnet
 
 			};
 			var BackgroundGrid = new Image ();
+
+			/*-----stacklayouts---*/
 			/*  stack for blood presure  */
 			var StackBloodPresure = new StackLayout ()
 			{
@@ -71,6 +95,11 @@ namespace wellnet
 			{
 				Spacing=0,
 				VerticalOptions=LayoutOptions.FillAndExpand,
+			};
+			/* heart rate */
+			var HeartStack = new StackLayout {
+				Spacing = 0,
+				VerticalOptions = LayoutOptions.FillAndExpand,
 			};
 			/*monitoring grids layout */
 			var MonitoringGrids=new Grid{
@@ -104,6 +133,12 @@ namespace wellnet
 			//StackBodyTemp.Children.Add ();
 
 			/*fill oxygen stack*/
+			OxygenStack.Children.Add (OxygenSatuationLevel);
+			OxygenStack.Children.Add (OxygenFigure);
+
+			/* fill heart rate stack*/
+			HeartStack.Children.Add (HeartRateStatus);
+			HeartStack.Children.Add (HeartRateFigure);
 
 			/*fill monitoring grids*/
 			//MonitoringGrids.Children.Add (BloodPresureStatus,1,1);
@@ -111,7 +146,8 @@ namespace wellnet
 			MonitoringGrids.Children.Add(StackBloodPresure,1,1);
 			MonitoringGrids.Children.Add (EcgMockup, 2,2);
 			MonitoringGrids.Children.Add (StackBodyTemp,2,1);
-
+			MonitoringGrids.Children.Add (OxygenStack,1,2);
+			MonitoringGrids.Children.Add (HeartStack,1,3);
 			/*grid style*/
 			this.Padding = new Thickness (10,10,10,10);
 			this.Content = MonitoringGrids;
