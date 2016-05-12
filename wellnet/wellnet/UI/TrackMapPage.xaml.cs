@@ -9,6 +9,7 @@ namespace wellnet
 	{
 		public TrackMapPage ()
 		{
+
 			InitializeComponent ();
 		}
 	}

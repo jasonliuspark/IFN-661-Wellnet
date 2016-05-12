@@ -42,7 +42,7 @@ namespace wellnet
 			/*--------------*/
 			var OxygenSatuationLevel = new Label ()
 			{
-				Text="Oxygen Satuation: "+"normal",
+				Text="Oxygen Satuation:\n"+"normal",
 				TextColor=Color.Blue,
 				FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label))
 			};

@@ -9,7 +9,9 @@ namespace wellnet
 		public App ()
 		{
 			// The root page of your application
-			MainPage = new NavigationPage(new PatientMonitoringPage());
+			//MainPage = new NavigationPage(new PatientMonitoringPage());
+			MainPage=new NavigationPage(new StartupMenu());
+
 		}
 
 		protected override void OnStart ()
