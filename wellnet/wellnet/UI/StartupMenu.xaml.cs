@@ -60,12 +60,12 @@ namespace wellnet
 		/*button listeners  */
 		public async void onPatientButtonClicked(object sender, EventArgs e)
 		{
-			
+			//todo: Patient view
 
 		}
 		public async void onFamilyButtonClicked(object sender, EventArgs e)
 		{
-
+			//todo: Family view
 
 		}
 		public async void onDoc_NurseButtonClicked(object sender, EventArgs e)
