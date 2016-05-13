@@ -5,53 +5,32 @@ using Xamarin.Forms;
 
 namespace wellnet
 {
-	public partial class Mainpage : ContentPage
+	public partial class PaitentListPage : ContentPage
 	{
-		public Mainpage ()
+		private DBInit _db;
+		public PaitentListPage(DBInit database)
 		{	
-			List<Patient>patientListSource = new List<Patient> {
-				new Patient { firstName = "Doris", lastName = "Anderson", bodyTemp = 37, heartRate = 90, location = "QUT KG", status = "Emergency"},
-				new Patient { firstName = "Kelly", lastName = "Wood", bodyTemp = 37, heartRate = 72, location = "QUT KG", status = "Normal"},
-				new Patient { firstName = "Joe", lastName = "Doe", bodyTemp = 37, heartRate = 88, location = "QUT KG", status = "Normal"},
-				new Patient { firstName = "Jennifer", lastName = "Ruhle", bodyTemp = 37, heartRate = 96, location = "QUT KG", status = "Normal"},
-				new Patient { firstName = "Wesley", lastName = "Stevenson", bodyTemp = 37, heartRate = 77, location = "QUT KG", status = "Normal"}
-			}; // patient list data for testing
+			_db = database;
+			Title = "Patient List";
 
-			DataTemplate patientListTemplate = new DataTemplate (typeof(patientListItem));
-
+			//get detail item source
+			var ptDetails = _db.GetDetails ();
 
 			int patientListRowHeight = patientListItem.RowHeight;
-
-			//set properties to the listview "patientList" following Mainpage XAML
+			//set properties to the listview "patientList" following Patient List XAML
 			ListView patientList = new ListView();
-			patientList.ItemsSource = patientListSource;
-			patientList.ItemTemplate = patientListTemplate;
+			patientList.ItemsSource=ptDetails;
+			patientList.ItemTemplate=new DataTemplate(typeof(patientListItem));
 			patientList.RowHeight = patientListRowHeight;
 
-			patientList.ItemTapped += (sender, e) => {
-				patientList.SelectedItem = null;
-				Navigation.PushAsync(new FruitDetailPage(e.Item as Patient));
-			};
-
-			Title = "Patients"; //Mainpage.title
+			//todo tap listenner
+//			patientList.ItemTapped += (sender, e) => {
+//				patientList.SelectedItem = null;
+//				Navigation.PushAsync(new FruitDetailPage(e.Item as Patient));
+//			};
+			//Title = "Patients"; //Mainpage.title
 			Content = patientList; //Mainpage.Content
 		}
-	}
-
-	public class Patient
-	{
-		public string firstName { get; set; }
-
-		public string lastName { get; set; }
-
-		public int bodyTemp { get; set; }
-
-		public int heartRate { get; set;}
-
-		public string location { get; set;}
-
-		public string status { get; set;}
-
 	}
 
 	public class patientListItem: ViewCell 
@@ -67,7 +46,7 @@ namespace wellnet
 				TextColor = Color.Black
 			
 			};
-			firstNameLabel.SetBinding(Label.TextProperty, "firstName");
+			firstNameLabel.SetBinding(Label.TextProperty, "FirstName");
 
 			var lastNameLabel = new Label { 
 				FontAttributes = FontAttributes.Bold,
@@ -75,8 +54,8 @@ namespace wellnet
 				FontSize = 19,
 				TextColor = Color.Black
 			};
-			lastNameLabel.SetBinding(Label.TextProperty, "lastName");
-
+			lastNameLabel.SetBinding(Label.TextProperty, "LastName");
+			/* todo join the tables and fill the bindings*/
 			var bodyTempLabel = new Label {
 				FontSize = 13,
 				TextColor = Color.FromHex ("#666")
@@ -125,14 +104,12 @@ namespace wellnet
 				Children = {
 					nameStack,
 					measurementStack
-
 				}
 			};
 			var statusStack = new StackLayout {
 				Children = {
 					statusLabel,
 					locationLabel
-
 				}
 			};
 			var combinedStack = new StackLayout {
@@ -141,29 +118,23 @@ namespace wellnet
 				Children = {
 					profileStack,
 					statusStack
-
-
 				}
-
 			};
-
 			this.View = combinedStack;
-
-
 		}
 	}
 
-	public class FruitDetailPage: ContentPage
-	{
-		public FruitDetailPage(Patient patient)
-		{
-			Title = patient.firstName;
-			Content = new Label {
-				Text = patient.status,
-				HorizontalOptions = LayoutOptions.CenterAndExpand,
-				VerticalOptions = LayoutOptions.CenterAndExpand,
-			};
-		}
-	}
+//	public class FruitDetailPage: ContentPage
+//	{
+//		public FruitDetailPage(Patient patient)
+//		{
+//			Title = patient.firstName;
+//			Content = new Label {
+//				Text = patient.status,
+//				HorizontalOptions = LayoutOptions.CenterAndExpand,
+//				VerticalOptions = LayoutOptions.CenterAndExpand,
+//			};
+//		}
+//	}
 }
 

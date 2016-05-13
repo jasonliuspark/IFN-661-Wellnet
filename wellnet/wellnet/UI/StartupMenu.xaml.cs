@@ -6,6 +6,7 @@ namespace wellnet
 {
 	public partial class StartupMenu : ContentPage
 	{
+		
 		public StartupMenu ()
 		{
 			/*draw menu buttons */
@@ -70,8 +71,9 @@ namespace wellnet
 		}
 		public async void onDoc_NurseButtonClicked(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new PatientMonitoringPage());
-
+			var database = new DBInit ();
+			//await Navigation.PushAsync(new PatientMonitoringPage());
+			await Navigation.PushAsync(new PaitentListPage(database));
 		}
 
 	}

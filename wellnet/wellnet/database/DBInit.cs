@@ -1,40 +1,39 @@
 ﻿using System;
 using Xamarin.Forms;
 using SQLite;
-using System.Collections;
-
+using System.Collections.Generic;
+using System.Linq;
 using SQLitePCL;
 
 namespace wellnet
 {
-	public interface ISQLite
-    {
-		SQLiteConnection GetConnection();
-
-	}
+	
 	public class DBInit
 	{
+		public SQLiteConnection db;
+
 		public DBInit ()
 		{
-			//SQLiteConnection db = DependencyService.Get<ISQLite>().GetConnection();
+			db = DependencyService.Get<ISQLite>().GetConnection();
+
 			//init tables if not existed 
-			PatientDetailsInit ();
-			PatientDrugHistoryInit ();
-			PatientMedicalRecordInit ();
-			PationLocationInit ();
-			PationMonitoringInit ();
+			PatientDetailsInit (db);
+			PatientDrugHistoryInit (db);
+			PatientMedicalRecordInit (db);
+			PationLocationInit (db);
+			PationMonitoringInit (db);
 		}
-		//Todo dbtest
-//		public IEnumerable<PatientDetails> GetDetails()
-//		{
-//
-//			return;
-//
-//		}
-		public void PatientDetailsInit()
+
+		public IEnumerable<PatientDetails> GetDetails()
+		{
+		    
+			return (from t in db.Table<PatientDetails>() select t).ToList();
+		
+		}
+		public void PatientDetailsInit(SQLiteConnection db)
 		{
 			
-			SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();
+//			SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();
 			db.CreateTable<PatientDetails> ();
 			if (db.Table<PatientDetails> ().Count() == 0) {
 			    
@@ -52,9 +51,9 @@ namespace wellnet
 				db.Insert (NewPtDetails);		
 			}
 		}
-		public void PatientDrugHistoryInit()
+		public void PatientDrugHistoryInit(SQLiteConnection db)
 		{
-			SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();
+			//SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();
 			db.CreateTable<PatientDrugHistry> ();
 			if (db.Table<PatientDrugHistry> ().Count() == 0) {
 				var NewDrgHistory = new PatientDrugHistry ();
@@ -66,9 +65,9 @@ namespace wellnet
 			}
 				
 		}
-		public void PationLocationInit()
+		public void PationLocationInit(SQLiteConnection db)
 		{
-			SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();
+			//SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();
 			db.CreateTable<PatientLocation> ();
 			if (db.Table<PatientLocation> ().Count () == 0) {
 				var NewLocation = new PatientLocation ();
@@ -79,9 +78,9 @@ namespace wellnet
 			}
 
 		}
-		public void PationMonitoringInit()
+		public void PationMonitoringInit(SQLiteConnection db)
 		{
-			SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();
+			//SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();
 			db.CreateTable<PatientMonitoringStatus> ();
 			if (db.Table<PatientMonitoringStatus> ().Count () == 0) {
 				var NewStatus = new PatientMonitoringStatus ();
@@ -93,9 +92,9 @@ namespace wellnet
 				db.Insert (NewStatus);
 			}
 		}
-		public void PatientMedicalRecordInit()
+		public void PatientMedicalRecordInit(SQLiteConnection db)
 		{
-			SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();
+			//SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();
 			db.CreateTable<PatientMedicalRecord> ();
 			if (db.Table<PatientMedicalRecord> ().Count () == 0) {
 				var NewRecord = new PatientMedicalRecord ();

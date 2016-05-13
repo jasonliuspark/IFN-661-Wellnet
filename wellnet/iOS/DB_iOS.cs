@@ -14,6 +14,7 @@ namespace wellnet.iOS
 
 		public DB_iOS(){
 		}
+		#region ios db implementation
 		public SQLite.SQLiteConnection GetConnection()
 		{
 
@@ -23,9 +24,8 @@ namespace wellnet.iOS
 			var path = Path.Combine (libraryPath,sqlFilename);
 			var conn = new SQLite.SQLiteConnection (path);
 			return conn;
-
 		}
-
+		#endregion
 
 
 	}

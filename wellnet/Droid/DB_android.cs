@@ -13,6 +13,7 @@ namespace wellnet.Droid
 		public DB_android (){
 			
 		}
+		#region db android implemtation
 		public SQLite.SQLiteConnection GetConnection()
 		{
 			var sqlFilename="wellnet.db3";
@@ -21,7 +22,7 @@ namespace wellnet.Droid
 			var conn = new SQLiteConnection (path);
 			return conn;
 		}
-
+		#endregion
 	}
 }
 
