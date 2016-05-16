@@ -23,22 +23,18 @@ namespace wellnet
 			//set properties to the listview "patientList" following Patient List XAML
 			ListView patientList = new ListView();
             patientList.ItemsSource=ptDetails;
-           // patientList.ItemsSource = status;
            
-            /*test */
-            //foreach (PatientDetails t in ptDetails)
-            //{
-            //    System.Diagnostics.Debug.WriteLine(t.FirstName);
-            //}
 			patientList.ItemTemplate=new DataTemplate(typeof(patientListItem));
 			patientList.RowHeight = patientListRowHeight;
 
-            //todo tap listener item index
-            patientList.ItemTapped += (sender, e) =>
+            //todo tap listener item index 0516Jack Test merge table
+            patientList.ItemTapped += (sender, args) =>
             {   
-                
-                patientList.SelectedItem = null;
-                Navigation.PushAsync(new PatientMonitoringPage( ));
+				var currentPatientDetail = args.Item as PatientDetails;
+				if (currentPatientDetail == null)
+					return;
+				Navigation.PushAsync(new PatientMonitoringPage(currentPatientDetail));
+				patientList.SelectedItem = null;
             };
             //Title = "Patients"; //Mainpage.title
             Content = patientList; //Mainpage.Content
