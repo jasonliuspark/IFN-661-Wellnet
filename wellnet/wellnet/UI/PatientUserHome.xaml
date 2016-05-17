@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="wellnet.UI.PatientUserHome"
+             Title="Resident Health Checkup"
+             Padding="10, 40, 10, 10">
+  <Label Text="How are you feeling today?"
+         FontSize="Large"
+         FontAttributes="Bold"
+         TextColor="#99bg1010"/>
+
+  <StackLayout>
+    <Label Text="Happy"
+           Font="Large"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+    <Label Text="Sad"
+           Font="Large"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+    <Label Text="Sick"
+               Font="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+    <Label Text="Confused"
+               Font="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+
+    <Button Text="Confirm"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand"/>
+  
+
+  </StackLayout>
+  
+</ContentPage>
