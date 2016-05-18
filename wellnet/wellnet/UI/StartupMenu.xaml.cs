@@ -62,6 +62,7 @@ namespace wellnet
 		public async void onPatientButtonClicked(object sender, EventArgs e)
 		{
 			//todo: Patient view
+			await Navigation.PushAsync(new TrackMapPage()); //Jack is testing the hospital level map
 
 		}
 		public async void onFamilyButtonClicked(object sender, EventArgs e)
