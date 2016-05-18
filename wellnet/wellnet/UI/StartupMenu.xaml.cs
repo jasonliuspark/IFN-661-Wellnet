@@ -62,7 +62,7 @@ namespace wellnet
 		public async void onPatientButtonClicked(object sender, EventArgs e)
 		{
 			//todo: Patient view
-			await Navigation.PushAsync(new TrackMapPage()); //Jack is testing the hospital level map
+
 
 		}
 		public async void onFamilyButtonClicked(object sender, EventArgs e)
@@ -72,9 +72,11 @@ namespace wellnet
 		}
 		public async void onDoc_NurseButtonClicked(object sender, EventArgs e)
 		{
-			var database = new DBInit ();
+			//var database = new DBInit ();
 			//await Navigation.PushAsync(new PatientMonitoringPage());
-			await Navigation.PushAsync(new PaitentListPage(database));
+			//await Navigation.PushAsync(new PaitentListPage(database));
+
+			await Navigation.PushAsync(new doctorEntry(){Title = "Doctor/Nurse View"}); //Jack tabbed page test
 		}
 
 	}
