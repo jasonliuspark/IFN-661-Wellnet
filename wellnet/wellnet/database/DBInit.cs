@@ -24,7 +24,12 @@ namespace wellnet
 			PationMonitoringInit (db);
 		}
 
+		public IEnumerable<PatientDetails> GetDetails()
+		{
+		    
+			return (from t in db.Table<PatientDetails>() select t).ToList();
 		
+		}
 		public void PatientDetailsInit(SQLiteConnection db)
 		{
 			
@@ -43,22 +48,8 @@ namespace wellnet
 				NewPtDetails.Gender="male";
 				NewPtDetails.MedicareExpiry = "13/05/2018";
 				NewPtDetails.MedicareNum = "0199938374747";
-                NewPtDetails.Status = "normal";
-				db.Insert (NewPtDetails);
-                var NewPtDetails2 = new PatientDetails();
-                NewPtDetails2.FirstName = "Jane";
-                NewPtDetails2.LastName = "Dole";
-                NewPtDetails2.Address = "1 Banana street 4109 QLD";
-                NewPtDetails2.Age = 23;
-                NewPtDetails2.DOB = "12/04/1991";
-                NewPtDetails2.ContactNumber = 0434105253;
-                NewPtDetails2.AdmissionTime = "13/04/2015";
-                NewPtDetails2.Gender = "male";
-                NewPtDetails2.MedicareExpiry = "13/05/2018";
-                NewPtDetails2.MedicareNum = "0199938374747";
-                NewPtDetails2.Status = "normal";
-                db.Insert(NewPtDetails2);
-            }
+				db.Insert (NewPtDetails);		
+			}
 		}
 		public void PatientDrugHistoryInit(SQLiteConnection db)
 		{
@@ -98,19 +89,8 @@ namespace wellnet
 				NewStatus.ECGRefference = 5;
 				NewStatus.HeartRate = 70;
 				NewStatus.PtID = 0;
-                NewStatus.Temperature = 36;
-                NewStatus.Status = "Normal";
 				db.Insert (NewStatus);
-                var NewStatus2 = new PatientMonitoringStatus();
-                NewStatus2.BloodPressureHigh = 110;
-                NewStatus2.BloodPressureLow = 90;
-                NewStatus2.ECGRefference = 5;
-                NewStatus2.HeartRate = 80;
-                NewStatus2.PtID = 1;
-                NewStatus2.Temperature = 37;
-                NewStatus2.Status = "Normal";
-                db.Insert(NewStatus2);
-            }
+			}
 		}
 		public void PatientMedicalRecordInit(SQLiteConnection db)
 		{
@@ -123,26 +103,7 @@ namespace wellnet
 				NewRecord.PtID = 0;
 				db.Insert (NewRecord);	
 			}
-            
 		}
-        //queries
-        public IEnumerable<PatientDetails> GetDetails()
-        {
-
-            return (from t in db.Table<PatientDetails>() select t).ToList();
-
-        }
-
-
-        /*details and track data join */
-        public IEnumerable<PatientMonitoringStatus> GetStatus()
-        {
-            
-            return (from t in db.Table<PatientMonitoringStatus>() select t).ToList();
-
-        }
-        //todo: join table
-
-    }
+	}
 }
 

@@ -17,7 +17,6 @@ namespace wellnet
 		public string Address {get;set;}
 		public string MedicareNum { get; set;}
 		public string MedicareExpiry { get; set;}
-        public string Status { get; set; }
 	}
 }
 

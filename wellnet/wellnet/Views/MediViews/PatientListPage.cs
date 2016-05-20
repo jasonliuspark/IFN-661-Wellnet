@@ -1,43 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 
 using Xamarin.Forms;
-using wellnet;
-using SQLite;
+
 namespace wellnet
 {
-	public partial class PaitentListPage : ContentPage
+	public partial class PatientListPage : ContentPage
 	{
-		private DBInit _db;
-		public PaitentListPage(DBInit database)
+		//private DBInit _db;
+		//public PaitentListPage(DBInit database)
+		public PatientListPage( )
 		{	
-			_db = database;
+			//_db = database;
 			Title = "Patient List";
 
 			//get detail item source
-			var ptDetails = _db.GetDetails ();
-            //var status = _db.GetStatus();
-            // var join = new JointDetails(ptDetails,status);
-            int patientListRowHeight = patientListItem.RowHeight;
+			//var ptDetails = _db.GetDetails ();
+
+			int patientListRowHeight = patientListItem.RowHeight;
 			//set properties to the listview "patientList" following Patient List XAML
 			ListView patientList = new ListView();
-            patientList.ItemsSource=ptDetails;
-           
+			//patientList.ItemsSource=ptDetails;
 			patientList.ItemTemplate=new DataTemplate(typeof(patientListItem));
 			patientList.RowHeight = patientListRowHeight;
 
-            //todo tap listener item index 0516Jack Test merge table
-            patientList.ItemTapped += (sender, args) =>
-            {   
-				var currentPatientDetail = args.Item as PatientDetails;
-				if (currentPatientDetail == null)
-					return;
-				Navigation.PushAsync(new PatientMonitoringPage(currentPatientDetail));
-				patientList.SelectedItem = null;
-            };
-            //Title = "Patients"; //Mainpage.title
-            Content = patientList; //Mainpage.Content
+			//todo tap listenner
+//			patientList.ItemTapped += (sender, e) => {
+//				patientList.SelectedItem = null;
+//				Navigation.PushAsync(new FruitDetailPage(e.Item as Patient));
+//			};
+			//Title = "Patients"; //Mainpage.title
+
+			BindingContext = App.Locator.ptlist;
+			Content = patientList; //Mainpage.Content
 		}
 	}
 
@@ -63,51 +58,35 @@ namespace wellnet
 				TextColor = Color.Black
 			};
 			lastNameLabel.SetBinding(Label.TextProperty, "LastName");
-            /* todo join the tables and fill the bindings*/
-            var bodyTempLabelT = new Label
-            {
-                FontSize = 13,
-                TextColor = Color.FromHex("#666"),
-                Text="Temp:"
-            };
-
-            var heartLabelT = new Label
-            {
-                FontSize = 13,
-                TextColor = Color.FromHex("#666"),
-                Text = "Heart Rate:"
-            };
-
-            var bodyTempLabel = new Label {
+			/* todo join the tables and fill the bindings*/
+			var bodyTempLabel = new Label {
 				FontSize = 13,
 				TextColor = Color.FromHex ("#666")
 			};
-			bodyTempLabel.SetBinding(Label.TextProperty,"Status");
+			bodyTempLabel.SetBinding(Label.TextProperty, "bodyTemp",stringFormat: "Temp: {0}`C");
 
 			var heartRateLabel = new Label {
 				FontSize = 13,
 				TextColor = Color.FromHex ("#666")
 			};
-			heartRateLabel.SetBinding(Label.TextProperty, "Status");
+			heartRateLabel.SetBinding(Label.TextProperty, "heartRate", stringFormat: "Pulse: {0}");
 
-		
-			var ageLabelT = new Label
-			{
-				FontSize = 19,
-				TextColor = Color.Black,
-				Text = "Age:"
+			var locationLabel = new Label {
+				FontSize = 13,
+				TextColor = Color.FromHex ("#666")
 			};
+			locationLabel.SetBinding(Label.TextProperty, "location", stringFormat: "Room: {0}");
 
-			var ageLabel = new Label {
-                FontAttributes = FontAttributes.Bold,
-                FontFamily = "HelveticaNeue-Medium",
-                FontSize = 19,
-                TextColor = Color.Black
-            };
-            ageLabel.SetBinding(Label.TextProperty, "Age");
+			var statusLabel = new Label {
+				FontAttributes = FontAttributes.Bold,
+				FontFamily = "HelveticaNeue-Medium",
+				FontSize = 19,
+				TextColor = Color.Black
+			};
+			statusLabel.SetBinding(Label.TextProperty, "status");
 
 
-            var nameStack = new StackLayout {
+			var nameStack = new StackLayout {
 				Orientation = StackOrientation.Horizontal,
 				Children = {
 					firstNameLabel,
@@ -118,15 +97,13 @@ namespace wellnet
 			var measurementStack = new StackLayout {
 				Orientation = StackOrientation.Horizontal,
 				Children = {
-                    bodyTempLabelT,
 					bodyTempLabel,
-                    heartLabelT,
 					heartRateLabel
 				}
 			};
 
 			var profileStack = new StackLayout {
-				WidthRequest = 245,
+				WidthRequest = 195,
 				Children = {
 					nameStack,
 					measurementStack
@@ -134,10 +111,8 @@ namespace wellnet
 			};
 			var statusStack = new StackLayout {
 				Children = {
-					//statusLabel,
-					//locationLabel
-					ageLabelT,
-                    ageLabel
+					statusLabel,
+					locationLabel
 				}
 			};
 			var combinedStack = new StackLayout {

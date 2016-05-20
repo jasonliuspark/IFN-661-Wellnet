@@ -7,7 +7,7 @@ namespace wellnet
 {
 	public partial class PatientMonitoringPage : ContentPage
 	{
-		public PatientMonitoringPage (PatientDetails currentPatientDetail)
+		public PatientMonitoringPage ()
 		{
 			/* blood presure items */
 			var BloodPresureStatus = new Label () {Text = "BloodPresure",
@@ -15,13 +15,13 @@ namespace wellnet
 				FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label))
 			};
 			var BloodPresureHigh = new Label () {
-				Text = currentPatientDetail.Age.ToString(),
+				Text = "120",
 				TextColor = Color.Blue,
 				FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label))
 			};
 			var BloodPresureLow = new Label ()
 			{
-				Text = currentPatientDetail.Gender,
+				Text = "90",
 				TextColor = Color.Blue,
 				FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label))
 			};
