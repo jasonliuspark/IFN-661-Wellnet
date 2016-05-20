@@ -49,6 +49,19 @@ namespace wellnet.UI
                 BorderColor = Color.Blue,
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
             };
+
+            var BtnDorisMessages = new Button()
+            {
+                Text = "Family Messages",
+                TextColor = Color.Purple,
+                BorderRadius = 2,
+                BorderWidth = 2,
+                BorderColor = Color.Blue,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
+            };
+
+
+
             /* draw button stack */
             var DorisMenuStack = new StackLayout()
             {
@@ -62,12 +75,14 @@ namespace wellnet.UI
             DorisMenuStack.Children.Add(BtnDorisMedication);
             DorisMenuStack.Children.Add(BtnDorisVitals);
             DorisMenuStack.Children.Add(BtnDorisAgenda);
+            DorisMenuStack.Children.Add(BtnDorisMessages);
 
             /* set click listener */
             //MenuButtonController menu = new MenuButtonController ();
             BtnDorisMedication.Clicked += onDorisMedicationButtonClicked;
             BtnDorisVitals.Clicked += onDorisVitalsButtonClicked;
             BtnDorisAgenda.Clicked += onDorisAgendaButtonClicked;
+            BtnDorisMessages.Clicked += onDorisMessageButtonClicked;
 
             /* fill the content page*/
             this.Content = DorisMenuStack;
@@ -77,19 +92,26 @@ namespace wellnet.UI
         /*button listeners  */
         public async void onDorisMedicationButtonClicked(object sender, EventArgs e)
         {
-            //todo: Family view
+            // Family Medication
             await Navigation.PushAsync(new FamilyMedication());
         }
 
         public async void onDorisVitalsButtonClicked(object sender, EventArgs e)
         {
-            //todo: Family view
+            // Family Vitals
             await Navigation.PushAsync(new FamilyVitals());
         }
         public void onDorisAgendaButtonClicked(object sender, EventArgs e)
         {
-            //todo: Patient view
+            // Famil
         }
+
+        public async void onDorisMessageButtonClicked(object sender, EventArgs e)
+        {
+            // Family Messages
+            await Navigation.PushAsync(new FamilyMessages());
+        }
+
     }
 }
 

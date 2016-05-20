@@ -9,32 +9,7 @@ using Xamarin.Forms;
 
 namespace wellnet.UI
 {
-    //public interface ISQLite
-    //{
-    //    SQLiteConnection GetConnection();
-    //}
-
-    //public WellnetDatabase()
-    //{
-    //    database = DependencyService.Get<ISQLite>().GetConnection();
-    //    database.CreateTable<medication>();
-    //}
-
-    //public IEnumerable<medication> GetItems()
-    //{
-    //    return (from i in database.Table<medication>() select i).ToList();
-    //}
-    //public IEnumerable<medication> GetItemsNotDone()
-    //{
-    //    return database.Query<medication>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
-    //}
-    //public TodoItem GetItem(int id)
-    //{
-    //    return database.Table<medication>().FirstOrDefault(x => x.ID == id);
-    //}
-
-
-    public partial class FamilyVitals : ContentPage
+       public partial class FamilyVitals : ContentPage
     {
         public FamilyVitals()
         {
@@ -47,7 +22,7 @@ namespace wellnet.UI
             };
             var BloodPressureStatusPic = new Image { Aspect = Aspect.AspectFit };
             {
-                BloodPressureStatusPic.Source = ImageSource.FromFile("HeartRate.jpg");
+                BloodPressureStatusPic.Source = ImageSource.FromFile("HeartRate2.gif");
             };
 
             /* body temperature items*/
@@ -142,7 +117,7 @@ namespace wellnet.UI
 
 
             /*grid style*/
-            this.Padding = new Thickness(10, 10, 10, 10);
+            this.Padding = new Thickness(30,30, 10, 10);
             this.Content = MonitoringGrids;
 
         }
