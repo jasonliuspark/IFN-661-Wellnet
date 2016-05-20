@@ -33,7 +33,7 @@ namespace wellnet
 		public void PatientDetailsInit(SQLiteConnection db)
 		{
 			
-//			SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();
+			//SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();
 			db.CreateTable<PatientDetails> ();
 			if (db.Table<PatientDetails> ().Count() == 0) {
 			    

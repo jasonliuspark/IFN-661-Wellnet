@@ -20,7 +20,7 @@ namespace wellnet
 		public StartupMenuViewModel (INavigationService nav)
 		{
 			_nav = nav;
-			doc_buttonCommand = new RelayCommand (()=>_nav.NavigateTo(Locator.DocPage)); 
+			doc_buttonCommand = new RelayCommand (()=>_nav.NavigateTo(MediLoc.ptlistPage)); 
 		}
 
 		public ICommand doc_buttonCommand {

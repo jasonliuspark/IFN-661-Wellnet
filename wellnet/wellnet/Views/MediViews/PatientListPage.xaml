@@ -1,15 +1,34 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="wellnet.PaitentListPage">
-<!--<ContentPage.Resources>
-    <ResourceDictionary>
-      <OnPlatform x:Key="boxSize"
-                  x:TypeArguments="x:Double"
-                  iOS="50"
-                  Android="50"
-                  WinPhone="75" />
-                 
-    </ResourceDictionary>
-  </ContentPage.Resources>-->
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="wellnet.PatientListPage"
+Title="Patient List">
+  <ListView x:Name="patientList" RowHeight="70" ItemsSource="{Binding PtDetails}">
+   <ListView.ItemTemplate>
+    <DataTemplate>
+     <ViewCell>
+     <StackLayout>
+      <StackLayout x:Name="nameStack" HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+      <Label x:Name="firstName" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+      FontSize="19" TextColor="Black" Text="{Binding FirstName}"/>
+      <Label x:Name="lastName" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+      FontSize="19" TextColor="Black" Text="{Binding LastName}"/>
+      </StackLayout>
 
+      <StackLayout x:Name="bodyTempStack" Orientation="Horizontal">
+      <Label x:Name="tempStLable" FontFamily="HelveticaNeue-Medium" 
+      FontSize="19" TextColor="Black" Text="Temp: "/>
+      <Label x:Name="tempStatus" FontFamily="HelveticaNeue-Medium" 
+      FontSize="19" TextColor="Black"/>
+      </StackLayout>
 
+      <StackLayout x:Name="heartRateStack" Orientation="Horizontal">
+      <Label x:Name="heartLable" FontFamily="HelveticaNeue-Medium" 
+      FontSize="19" TextColor="Black" Text="HeartRate: "/>
+      <Label x:Name="heartStatus" FontFamily="HelveticaNeue-Medium" 
+      FontSize="19" TextColor="Black"/>
+      </StackLayout>
+
+      </StackLayout>
+     </ViewCell>
+    </DataTemplate>
+   </ListView.ItemTemplate>
+  </ListView>
 </ContentPage>

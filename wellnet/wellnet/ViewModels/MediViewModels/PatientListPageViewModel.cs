@@ -15,11 +15,32 @@ namespace wellnet
 {
 	public class PatientListPageViewModel:ViewModelBase
 	{
-		private INavigationService _nav;
-		public PatientListPageViewModel (INavigationService nav)
-		{
-			_nav = nav;
+		//private INavigationService _nav;
+		private IEnumerable<PatientDetails> ptdetails;
 
+		public PatientListPageViewModel ()
+		{
+			var db = new DBInit ();
+			ptdetails= db.GetDetails ();
+
+		}
+		public IEnumerable<PatientDetails> PtDetails {
+
+			get{ 
+			
+				return this.ptdetails;
+			}
+
+			set{  
+				this.ptdetails = value;
+
+			}
+
+		}
+
+		public ICommand listTapCommand {
+			get;
+			set;
 		}
 	}
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +24,7 @@ namespace wellnet
 			//register view model
 
 			SimpleIoc.Default.Register<StartupMenuViewModel> ();
-			SimpleIoc.Default.Register<PatientListPageViewModel> ();
+			//SimpleIoc.Default.Register<PatientListPageViewModel> ();
 		}
 
 
@@ -34,13 +33,13 @@ namespace wellnet
 			get{return ServiceLocator.Current.GetInstance<StartupMenuViewModel> (); }
 		}
 
-		public PatientListPageViewModel ptlist
-		{
-
-			get{ return ServiceLocator.Current.GetInstance<PatientListPageViewModel> ();}
-
-		}
-//		
+//		public PatientListPageViewModel ptlist
+//		{
+//
+//			get{ return ServiceLocator.Current.GetInstance<PatientListPageViewModel> ();}
+//
+//		}
+////		
 	}
 }
 
