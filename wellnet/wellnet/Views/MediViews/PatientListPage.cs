@@ -5,21 +5,22 @@ using Xamarin.Forms;
 
 namespace wellnet
 {
-	public partial class PaitentListPage : ContentPage
+	public partial class PatientListPage : ContentPage
 	{
-		private DBInit _db;
-		public PaitentListPage(DBInit database)
+		//private DBInit _db;
+		//public PaitentListPage(DBInit database)
+		public PatientListPage( )
 		{	
-			_db = database;
+			//_db = database;
 			Title = "Patient List";
 
 			//get detail item source
-			var ptDetails = _db.GetDetails ();
+			//var ptDetails = _db.GetDetails ();
 
 			int patientListRowHeight = patientListItem.RowHeight;
 			//set properties to the listview "patientList" following Patient List XAML
 			ListView patientList = new ListView();
-			patientList.ItemsSource=ptDetails;
+			//patientList.ItemsSource=ptDetails;
 			patientList.ItemTemplate=new DataTemplate(typeof(patientListItem));
 			patientList.RowHeight = patientListRowHeight;
 
@@ -29,6 +30,8 @@ namespace wellnet
 //				Navigation.PushAsync(new FruitDetailPage(e.Item as Patient));
 //			};
 			//Title = "Patients"; //Mainpage.title
+
+			BindingContext = App.Locator.ptlist;
 			Content = patientList; //Mainpage.Content
 		}
 	}

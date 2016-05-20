@@ -40,25 +40,33 @@
     <Compile Include="database\tables\PatientLocation.cs" />
     <Compile Include="database\tables\PatientDrugHistry.cs" />
     <Compile Include="PatientController\PatientController.cs" />
-    <Compile Include="UI\PatientMonitoringPage.xaml.cs">
-      <DependentUpon>PatientMonitoringPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UI\TrackMapPage.xaml.cs">
-      <DependentUpon>TrackMapPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UI\MedicalHistoryPage.xaml.cs">
-      <DependentUpon>MedicalHistoryPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UI\PatientDetailsPage.xaml.cs">
-      <DependentUpon>PatientDetailsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UI\StartupMenu.xaml.cs">
+    <Compile Include="database\ISQLite.cs" />
+    <Compile Include="Views\StartupMenu.xaml.cs">
       <DependentUpon>StartupMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\PatientListPage.cs">
+    <Compile Include="Views\MediViews\MedicalHistoryPage.xaml.cs">
+      <DependentUpon>MedicalHistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MediViews\PatientDetailsPage.xaml.cs">
+      <DependentUpon>PatientDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MediViews\PatientListPage.cs">
       <DependentUpon>PatientListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="database\ISQLite.cs" />
+    <Compile Include="Views\MediViews\PatientMonitoringPage.xaml.cs">
+      <DependentUpon>PatientMonitoringPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MediViews\TrackMapPage.xaml.cs">
+      <DependentUpon>TrackMapPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\MediViewModels\MedicalHistoryPageViewModel.cs" />
+    <Compile Include="ViewModels\MediViewModels\PatientDetailsPageViewModel.cs" />
+    <Compile Include="ViewModels\MediViewModels\PatientMonitoringViewModel.cs" />
+    <Compile Include="ViewModels\MediViewModels\TrackMapPageViewModel.cs" />
+    <Compile Include="Locator.cs" />
+    <Compile Include="Helpers\NavigationService.cs" />
+    <Compile Include="ViewModels\StartupMenuViewModel.cs" />
+    <Compile Include="ViewModels\MediViewModels\PatientListPageViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.3.5.6335\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.5.6335\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
@@ -67,27 +75,33 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="database\" />
-    <Folder Include="UI\" />
     <Folder Include="PatientController\" />
     <Folder Include="database\tables\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\MediViews\" />
+    <Folder Include="ViewModels\MediViewModels\" />
+    <Folder Include="Views\FamilyViews\" />
+    <Folder Include="Views\PatientViews\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UI\PatientMonitoringPage.xaml">
+    <EmbeddedResource Include="Views\StartupMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\TrackMapPage.xaml">
+    <EmbeddedResource Include="Views\MediViews\MedicalHistoryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\MedicalHistoryPage.xaml">
+    <EmbeddedResource Include="Views\MediViews\PatientDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\PatientDetailsPage.xaml">
+    <EmbeddedResource Include="Views\MediViews\PatientListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\StartupMenu.xaml">
+    <EmbeddedResource Include="Views\MediViews\PatientMonitoringPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\PatientListPage.xaml">
+    <EmbeddedResource Include="Views\MediViews\TrackMapPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -103,6 +117,15 @@
     </Reference>
     <Reference Include="SQLite-net">
       <HintPath>..\packages\sqlite-net-pcl.1.1.1\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\portable-net45+wp8+wpa81+netcore45+monoandroid1+xamarin.ios10\GalaSoft.MvvmLight.Extras.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
