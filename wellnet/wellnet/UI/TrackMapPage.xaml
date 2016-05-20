@@ -1,11 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="wellnet.TrackMapPage">
-	<ContentPage.Content>
-	<StackLayout Spacing="0" VerticalOptions="FillAndExpand" >
-	  <Label Text="test" TextColor="Aqua">
 
-	  </Label>
-	</StackLayout>
+<ContentPage.content>
 
-	</ContentPage.Content>
+</ContentPage.content>	
+
 </ContentPage>
