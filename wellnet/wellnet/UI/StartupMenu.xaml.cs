@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
-
+using wellnet.UI;
 namespace wellnet
 {
 	public partial class StartupMenu : ContentPage
@@ -66,8 +66,8 @@ namespace wellnet
 		}
 		public async void onFamilyButtonClicked(object sender, EventArgs e)
 		{
-			//todo: Family view
-
+            //todo: Family view
+            await Navigation.PushAsync(new FamilyPage());
 		}
 		public async void onDoc_NurseButtonClicked(object sender, EventArgs e)
 		{
