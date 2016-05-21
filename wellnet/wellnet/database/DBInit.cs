@@ -30,6 +30,18 @@ namespace wellnet
 			return (from t in db.Table<PatientDetails>() select t).ToList();
 		
 		}
+
+//		public IEnumerable<PatientMonitoringStatus> GetStatus()
+//
+//        {
+//           
+//			return (from t in db.Table<PatientMonitoringStatus>() select t).ToList();
+//			
+//		}
+//
+
+
+
 		public void PatientDetailsInit(SQLiteConnection db)
 		{
 			

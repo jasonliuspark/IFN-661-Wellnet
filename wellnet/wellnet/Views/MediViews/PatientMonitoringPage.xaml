@@ -1,5 +1,76 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-x:Class="wellnet.PatientMonitoringPage">
+x:Class="wellnet.PatientMonitoringPage"
+Title="Patient Detail"
+>
+<ScrollView Padding="20">
+<StackLayout>
+	<StackLayout Orientation="Horizontal">
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="Name:"/>
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="{Binding FirstName}"/>
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="{Binding LastName}"/>
+	</StackLayout>
+
+	<StackLayout Orientation="Horizontal">
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="Gender:"/>
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="{Binding Gender}"/>
+	</StackLayout>
+
+	<StackLayout Orientation="Horizontal">
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="Age:"/>
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="{Binding Age}"/>
+	</StackLayout>
+
+	<StackLayout Orientation="Horizontal">
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="Address:"/>
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="{Binding Address}"/>
+	</StackLayout>
+
+	<StackLayout Orientation="Horizontal">
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="DOB:"/>
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="{Binding DOB}"/>
+	</StackLayout>
+
+	<StackLayout Orientation="Horizontal">
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="Phone:"/>
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="{Binding ContactNumber}"/>
+	</StackLayout>
+
+	<StackLayout Orientation="Horizontal">
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="Adminssion Date:"/>
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="{Binding AdmissionTime}"/>
+	</StackLayout>
+
+	<StackLayout Orientation="Horizontal">
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="Medicare Exp:"/>
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="{Binding MedicareExpiry}"/>
+	</StackLayout>
+
+	<StackLayout Orientation="Horizontal">
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="Medicare No.:"/>
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	FontSize="19" TextColor="Black" Text="{Binding MedicareNum}"/>
+	</StackLayout>
+
+</StackLayout>
+</ScrollView>
 </ContentPage>

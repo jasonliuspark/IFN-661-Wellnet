@@ -11,6 +11,7 @@ namespace wellnet
 		//public PaitentListPage(DBInit database)
 		public PatientListPage( )
 		{	
+			
 			//_db = database;
 			//Title = "Patient List";
 
@@ -25,14 +26,31 @@ namespace wellnet
 			//patientList.RowHeight = patientListRowHeight;
 
 			//todo tap listenner
-//			patientList.ItemTapped += (sender, e) => {
+//			patientList.ItemTapped += (sender, args) =>
+//			{   
+//				var currentPatientDetail = args.Item as PatientDetails;
+//				if (currentPatientDetail == null)
+//					return;
+//				Navigation.PushAsync(new PatientMonitoringPage(currentPatientDetail));
 //				patientList.SelectedItem = null;
-//				Navigation.PushAsync(new FruitDetailPage(e.Item as Patient));
 //			};
 			//Title = "Patients"; //Mainpage.title
 			InitializeComponent();
 			BindingContext = App.MediLoc.ptlist;
 			//Content = patientList; //Mainpage.Content
+		}
+
+		public void patientListTapped(object sender, ItemTappedEventArgs args)
+
+		{
+
+			var currentPatientDetail = args.Item as PatientDetails;
+
+			if (currentPatientDetail == null)
+				return;
+			Navigation.PushAsync(new PatientMonitoringPage(currentPatientDetail));
+			patientList.SelectedItem = null;
+
 		}
 	}
 
@@ -140,5 +158,6 @@ namespace wellnet
 //			};
 //		}
 //	}
+
 }
 

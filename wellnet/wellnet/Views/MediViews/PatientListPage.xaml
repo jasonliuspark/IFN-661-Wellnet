@@ -1,8 +1,8 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="wellnet.PatientListPage"
 Title="Patient List">
-  <ListView x:Name="patientList" RowHeight="70" ItemsSource="{Binding PtDetails}">
+  <ListView x:Name="patientList" RowHeight="70" ItemsSource="{Binding PtDetails}" ItemTapped="patientListTapped">
    <ListView.ItemTemplate>
-    <DataTemplate>
+    <DataTemplate> 
      <ViewCell>
      <StackLayout>
       <StackLayout x:Name="nameStack" HorizontalOptions="StartAndExpand" Orientation="Horizontal">
