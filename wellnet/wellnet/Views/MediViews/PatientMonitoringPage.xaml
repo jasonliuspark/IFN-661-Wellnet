@@ -6,70 +6,106 @@ Title="Patient Detail"
 >
 <ScrollView Padding="20">
 <StackLayout>
-	<StackLayout Orientation="Horizontal">
+<!--firstname and lastname-->
+	<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="Name:"/>
+	FontSize="22" TextColor="Black" Text="{Binding FirstName}"/>
 	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="{Binding FirstName}"/>
-	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="{Binding LastName}"/>
+	FontSize="22" TextColor="Black" Text="{Binding LastName}"/>
 	</StackLayout>
 
-	<StackLayout Orientation="Horizontal">
-	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="Gender:"/>
-	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="{Binding Gender}"/>
+<!--gender and age-->
+	<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+		<StackLayout Orientation="Horizontal">
+		<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="Gender:"/>
+		<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="{Binding Gender}"/>
+		</StackLayout>
+
+		<StackLayout Orientation="Horizontal">
+		<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="Age:"/>
+		<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="{Binding Age}"/>
+		</StackLayout>
 	</StackLayout>
 
-	<StackLayout Orientation="Horizontal">
-	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="Age:"/>
-	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="{Binding Age}"/>
+<!--Temperature and Blood Pressure-->
+	<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+		<StackLayout Orientation="Horizontal">
+		<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="Temp:"/>
+		<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="{Binding Temp}"/>
+		</StackLayout>
+
+		<StackLayout Orientation="Horizontal">
+		<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="BP"/>
+		<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="{Binding BloodPressureHigh}"/>
+		<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="/"/>
+		<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="{Binding BloodPressureLow}"/>
+		</StackLayout>
 	</StackLayout>
 
-	<StackLayout Orientation="Horizontal">
+<!--Heart Rate-->
+	<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="Address:"/>
+		FontSize="19" TextColor="Gray" Text="Real-time heart rate:"/>
 	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="{Binding Address}"/>
+		FontSize="19" TextColor="Gray" Text="{Binding HeartRate}"/>
 	</StackLayout>
 
-	<StackLayout Orientation="Horizontal">
+<!--Past Disease-->
+<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="DOB:"/>
+		FontSize="19" TextColor="Gray" Text="Past Disease:"/>
 	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="{Binding DOB}"/>
+		FontSize="19" TextColor="Gray" Text="{Binding PastDisease}"/>
 	</StackLayout>
 
-	<StackLayout Orientation="Horizontal">
+<!--Ward info-->
+	<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="Phone:"/>
+		FontSize="19" TextColor="Gray" Text="Ward No:"/>
 	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="{Binding ContactNumber}"/>
+		FontSize="19" TextColor="Gray" Text="{Binding RoomNo}"/>
 	</StackLayout>
 
+<!--realtime ECG label-->
 	<StackLayout Orientation="Horizontal">
 	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="Adminssion Date:"/>
-	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="{Binding AdmissionTime}"/>
+		FontSize="13" TextColor="Gray" Text="ECG"/>
 	</StackLayout>
 
-	<StackLayout Orientation="Horizontal">
-	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="Medicare Exp:"/>
-	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="{Binding MedicareExpiry}"/>
+<!--realtime ECG ImageSource-->
+	<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+	<Image Source="{Binding ECGPic}" WidthRequest="340" />
 	</StackLayout>
 
+<!--<WebView 
+      Source="http://i191.photobucket.com/albums/z91/mrg_017/ClearNuance/i-curva.gif"></WebView>-->
+
+
+
+	
+<!--realtime location (label)-->
 	<StackLayout Orientation="Horizontal">
 	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="Medicare No.:"/>
-	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	FontSize="19" TextColor="Black" Text="{Binding MedicareNum}"/>
+		FontSize="13" TextColor="Gray" Text="Real-time location:"/>
 	</StackLayout>
+
+<!--realtime location (ImageSource)-->
+	<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+	<Image Source="{Binding Location}"/>
+	</StackLayout>
+
+
+
 
 </StackLayout>
 </ScrollView>

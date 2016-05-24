@@ -4,28 +4,39 @@ Title="Patient List">
    <ListView.ItemTemplate>
     <DataTemplate> 
      <ViewCell>
-     <StackLayout>
-      <StackLayout x:Name="nameStack" HorizontalOptions="StartAndExpand" Orientation="Horizontal">
-      <Label x:Name="firstName" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-      FontSize="19" TextColor="Black" Text="{Binding FirstName}"/>
-      <Label x:Name="lastName" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-      FontSize="19" TextColor="Black" Text="{Binding LastName}"/>
-      </StackLayout>
+     <StackLayout Orientation="Horizontal" Padding="10">
+     	<StackLayout Orientation="Vertical">
+<!--Firstname and lastname-->
+	      <StackLayout x:Name="nameStack" Orientation="Horizontal">
+	      <Label x:Name="firstName" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	      FontSize="22" TextColor="Black" Text="{Binding FirstName}"/>
+	      <Label x:Name="lastName" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	      FontSize="22" TextColor="Black" Text="{Binding LastName}"/>
+	      </StackLayout>
 
-      <StackLayout x:Name="bodyTempStack" Orientation="Horizontal">
-      <Label x:Name="tempStLable" FontFamily="HelveticaNeue-Medium" 
-      FontSize="19" TextColor="Black" Text="Temp: "/>
-      <Label x:Name="tempStatus" FontFamily="HelveticaNeue-Medium" 
-      FontSize="19" TextColor="Black"/>
-      </StackLayout>
+<!--Temp and heartrate-->
+	      <StackLayout Orientation="Horizontal">
+		      <StackLayout x:Name="bodyTempStack" Orientation="Horizontal">
+		      <Label x:Name="tempStLable" FontFamily="HelveticaNeue-Medium" 
+		      FontSize="15" TextColor="Gray" Text="Temp: "/>
+		      <Label x:Name="tempStatus" FontFamily="HelveticaNeue-Medium" 
+		      FontSize="15" TextColor="Gray" Text="{Binding Temp}" />
+		      </StackLayout>
 
-      <StackLayout x:Name="heartRateStack" Orientation="Horizontal">
-      <Label x:Name="heartLable" FontFamily="HelveticaNeue-Medium" 
-      FontSize="19" TextColor="Black" Text="HeartRate: "/>
-      <Label x:Name="heartStatus" FontFamily="HelveticaNeue-Medium" 
-      FontSize="19" TextColor="Black"/>
-      </StackLayout>
+		      <StackLayout x:Name="heartRateStack" Orientation="Horizontal">
+		      <Label x:Name="heartLable" FontFamily="HelveticaNeue-Medium" 
+		      FontSize="15" TextColor="Gray" Text="HeartRate: "/>
+		      <Label x:Name="heartStatus" FontFamily="HelveticaNeue-Medium" 
+		      FontSize="15" TextColor="Gray" Text="{Binding HeartRate}"/>
+		      </StackLayout>
+	      </StackLayout>
 
+<!--TODO:Add button to popup patient detail(not monitoring status) info page-->
+
+<!--Vertical stack wrap-->
+	    </StackLayout>
+
+<!--the Outsidest-->
       </StackLayout>
      </ViewCell>
     </DataTemplate>

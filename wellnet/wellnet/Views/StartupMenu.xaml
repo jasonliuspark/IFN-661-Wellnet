@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 xmlns:local="clr-namespace:wellnet; assembly=wellnet"
-x:Class="wellnet.StartupMenu" Title="Start Men">
+x:Class="wellnet.StartupMenu" Title="Start Menu">
 	<StackLayout Spacing="10">
 	<Button Text= "Patient View" TextColor= "Red" BorderRadius="2"
 	BorderWidth="2" BorderColor="Blue" Font="Large"/>

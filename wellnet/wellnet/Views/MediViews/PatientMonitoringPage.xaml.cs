@@ -153,7 +153,6 @@ namespace wellnet
 			InitializeComponent();
 			this.BindingContext = currentPatientDetail;
 
-
 		}
 	}
 }
