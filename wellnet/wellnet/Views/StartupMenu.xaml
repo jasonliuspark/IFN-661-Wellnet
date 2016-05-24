@@ -4,7 +4,8 @@ xmlns:local="clr-namespace:wellnet; assembly=wellnet"
 x:Class="wellnet.StartupMenu" Title="Start Men">
 	<StackLayout Spacing="10">
 	<Button Text= "Patient View" TextColor= "Red" BorderRadius="2"
-	BorderWidth="2" BorderColor="Blue" Font="Large"/>
+	BorderWidth="2" BorderColor="Blue" Font="Large"
+  Command="{Binding patientButtonCommand}"/>
 	<Button Text= "Family view" TextColor= "Red" BorderRadius="2"
 	BorderWidth="2" BorderColor="Blue" Font="Large"/>
 	<Button Text= "Doc/Nurse view" TextColor= "Red" BorderRadius="2"

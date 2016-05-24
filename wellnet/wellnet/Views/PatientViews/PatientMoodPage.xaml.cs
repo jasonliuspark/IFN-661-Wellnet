@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace wellnet.Views.PatientViews
+namespace wellnet
 {
     public partial class PatientMoodPage : ContentPage
     {
         public PatientMoodPage()
         {
             InitializeComponent();
+            BindingContext = App.PatientLoc.PatientMood;
         }
     }
 }
