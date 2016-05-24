@@ -9,9 +9,13 @@ namespace wellnet
 	public class App : Application
 	{
 		private static Locator _loc;
+        
 		public static Locator Locator { get { return _loc ?? (_loc = new Locator()); } }
 		private static MediLoc _mediloc;
 		public static MediLoc MediLoc { get { return _mediloc ?? (_mediloc = new MediLoc()); } }
+
+        private static PatientLoc _patientLoc;
+        public static PatientLoc PatientLoc { get { return _patientLoc ?? ( _patientLoc = new PatientLoc()); } }
 		public App ()
 		{
 			// The root page of your application
@@ -21,6 +25,7 @@ namespace wellnet
 			var nav = new NavigationService();
 			nav.Configure(Locator.MenuPage, typeof(StartupMenu));
 			nav.Configure(MediLoc.ptlistPage, typeof(PatientListPage));
+            nav.Configure(PatientLoc.ptMoodPage, typeof(PatientMoodPage));
 			//nav.Configure(Locator.ThirdPage, typeof(ThirdPage));
 			SimpleIoc.Default.Register<INavigationService>(() => nav);
 
