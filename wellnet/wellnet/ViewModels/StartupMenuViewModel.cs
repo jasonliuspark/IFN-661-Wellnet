@@ -22,6 +22,7 @@ namespace wellnet
 			_nav = nav;
 			doc_buttonCommand = new RelayCommand (()=>_nav.NavigateTo(MediLoc.ptlistPage));
             patientButtonCommand = new RelayCommand(() => _nav.NavigateTo(PatientLoc.ptMoodPage));
+            familyButtonCommand = new RelayCommand(() => _nav.NavigateTo(FamilyLoc.familyPage));
         }
 
 		public ICommand doc_buttonCommand {
@@ -34,6 +35,13 @@ namespace wellnet
             get;
             set;
         }
+
+        public ICommand familyButtonCommand
+        {
+            get;
+            set;
+        }
+
 
 	
 	}
