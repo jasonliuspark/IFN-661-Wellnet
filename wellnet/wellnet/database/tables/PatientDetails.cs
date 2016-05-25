@@ -5,7 +5,7 @@ namespace wellnet
 {
 	public class PatientDetails
 	{
-		[PrimaryKey,AutoIncrement]
+		[PrimaryKey]
 		public int PtID { get; set;}
 		public string FirstName { get; set;}
 		public string LastName { get; set;}
@@ -34,7 +34,9 @@ namespace wellnet
 		public string Strength { get; set;}
 		//MedicalRecord table
 		public string DoctorNotes { get; set;}
-		public string PastDisease{ get; set;}
+		public string PastDisease { get; set;}
+		//Patient Mood
+		public string PtMood { get; set; }
 	}
 }
 
