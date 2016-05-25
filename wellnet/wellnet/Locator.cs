@@ -17,7 +17,7 @@ namespace wellnet
 		public const string FamilyPage = "FamilyPage";
 		public const string PatientPage = "PatientPage";
 
-		public Locator ()
+        public Locator ()
 		{
 			
 			ServiceLocator.SetLocatorProvider (()=>SimpleIoc.Default);
