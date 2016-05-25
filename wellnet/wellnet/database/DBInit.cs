@@ -31,7 +31,6 @@ namespace wellnet
 		
 		}
 
-   
 //		public IEnumerable<PatientMonitoringStatus> GetStatus()
 //
 //        {
@@ -52,7 +51,7 @@ namespace wellnet
 				db.DropTable<PatientDetails> ();
 				db.CreateTable<PatientDetails> ();
 				var NewPtDetails = new PatientDetails ();
-				NewPtDetails.PtID = 1;
+				NewPtDetails.PtID = 0;
 				NewPtDetails.FirstName = "John";
 				NewPtDetails.LastName="Doe";
 				NewPtDetails.Age = 25;
@@ -74,18 +73,19 @@ namespace wellnet
 				NewPtDetails.Location = "John_location.jpg";
 				NewPtDetails.Status = "Normal";
 				//testing, should be in drugHistry table
-				NewPtDetails.DrugName = "Crestor";
+				NewPtDetails.DrugName = "Panadol";
 				NewPtDetails.Dosage = "1 pill";
-				NewPtDetails.DosingTime = "pm";
+				NewPtDetails.DosingTime = "2/day";
 				NewPtDetails.Strength = "weak";
 				//testing, should be in MedicalRecord table
 				NewPtDetails.DoctorNotes = "currently in good health";
 				NewPtDetails.PastDisease = "athsma";
+				NewPtDetails.PtMood = "Stable";
 
 				db.Insert (NewPtDetails);
 
 				var NewPtDetails2 = new PatientDetails ();
-				NewPtDetails2.PtID = 2;
+				NewPtDetails2.PtID = 1;
 				NewPtDetails2.FirstName = "Doris";
 				NewPtDetails2.LastName="Morrison";
 				NewPtDetails2.Age = 70;
@@ -114,41 +114,13 @@ namespace wellnet
 				//testing, should be in MedicalRecord table
 				NewPtDetails2.DoctorNotes = "take more care of heart";
 				NewPtDetails2.PastDisease = "premature";
-				db.Insert (NewPtDetails2);
+				//testing, patient mood
+				NewPtDetails2.PtMood = "Happy";
 
-                var NewPtDetails3 = new PatientDetails();
-                NewPtDetails3.PtID = 1;
-                NewPtDetails3.FirstName = "John";
-                NewPtDetails3.LastName = "Doe";
-                NewPtDetails3.Age = 25;
-                NewPtDetails3.DOB = "12/04/1991";
-                NewPtDetails3.Gender = "Male";
-                NewPtDetails3.AdmissionTime = "13/04/2015";
-                NewPtDetails3.ContactNumber = 0434105253;
-                NewPtDetails3.Address = "1 Apple street 4000 QLD";
-                NewPtDetails3.MedicareNum = "0199938374747";
-                NewPtDetails3.MedicareExpiry = "13/05/2018";
-                //testing, should be in monitoring status table
-                NewPtDetails3.HeartRate = 96;
-                NewPtDetails3.Temp = 36.8;
-                NewPtDetails3.BloodPressureHigh = 120;
-                NewPtDetails3.BloodPressureLow = 81;
-                NewPtDetails3.ECGRefference = 5;
-                NewPtDetails3.ECGPic = "John_ecg.gif";
-                NewPtDetails3.RoomNo = "C-HTA-406";
-                NewPtDetails3.Location = "John_location.jpg";
-                NewPtDetails3.Status = "Normal";
-                //testing, should be in drugHistry table
-                NewPtDetails3.DrugName = "Coversyl";
-                NewPtDetails3.Dosage = "1 pill";
-                NewPtDetails3.DosingTime = "amy";
-                NewPtDetails3.Strength = "weak";
-                //testing, should be in MedicalRecord table
-                NewPtDetails3.DoctorNotes = "currently in good health";
-                NewPtDetails3.PastDisease = "athsma";
+				db.Insert (NewPtDetails2);	
 
-                db.Insert(NewPtDetails3);
-            }
+
+			}
 		}
 		public void PatientDrugHistoryInit(SQLiteConnection db)
 		{
@@ -203,10 +175,6 @@ namespace wellnet
 				db.Insert (NewRecord);	
 			}
 		}
-
-
-
-
 	}
 }
 

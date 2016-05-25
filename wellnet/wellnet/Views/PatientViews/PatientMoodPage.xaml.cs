@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 
 namespace wellnet
@@ -13,7 +12,7 @@ namespace wellnet
         public PatientMoodPage()
         {
             InitializeComponent();
-            BindingContext = App.PatientLoc.PatientMood;
+			BindingContext = App.PatientLoc.PatientMood;
         }
     }
 }
