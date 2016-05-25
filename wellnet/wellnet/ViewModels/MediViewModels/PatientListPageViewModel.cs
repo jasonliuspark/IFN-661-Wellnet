@@ -6,8 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Input;
-
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 
@@ -22,6 +22,13 @@ namespace wellnet
 		{
 			var db = new DBInit ();
 			ptdetails= db.GetDetails ();
+
+			foreach(var s in ptdetails)
+			{
+				
+				Debug.WriteLine (s + "is printed out");
+
+			}
 
 		}
 		public IEnumerable<PatientDetails> PtDetails {
