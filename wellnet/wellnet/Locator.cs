@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using wellnet;
-
+using wellnet.ViewModels.PatientViewModels;
 
 namespace wellnet
 {
@@ -21,8 +21,8 @@ namespace wellnet
 		{
 			
 			ServiceLocator.SetLocatorProvider (()=>SimpleIoc.Default);
-			//register view model
-
+            //register view model
+            
 			SimpleIoc.Default.Register<StartupMenuViewModel> ();
 			//SimpleIoc.Default.Register<PatientListPageViewModel> ();
 		}
