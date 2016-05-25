@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using wellnet;
+using wellnet.ViewModels.PatientViewModels;
+
 
 namespace wellnet
 {
