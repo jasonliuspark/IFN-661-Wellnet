@@ -30,8 +30,13 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="FamilyLoc.cs" />
     <Compile Include="PatientLoc.cs" />
+    <Compile Include="ViewModels\FamilyViewModels\FamilyPageViewModel.cs" />
     <Compile Include="ViewModels\PatientViewModels\PatientMoodPageViewModel.cs" />
+    <Compile Include="Views\FamilyViews\FamilyPage.xaml.cs">
+      <DependentUpon>FamilyPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PatientViews\PatientMoodPage.xaml.cs">
       <DependentUpon>PatientMoodPage.xaml</DependentUpon>
     </Compile>
@@ -79,9 +84,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\FamilyViews\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Views\StartupMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -127,6 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\PatientViews\PatientMoodPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\FamilyViews\FamilyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

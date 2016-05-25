@@ -2,21 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="wellnet.PatientMoodPage">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
-
-  <AbsoluteLayout BackgroundColor="#FF8080">
-    <ContentPage.Padding>
-      <OnPlatform x:TypeArguments="Thickness"
-                  iOS="0, 20, 0, 0">
-      </OnPlatform>
-    </ContentPage.Padding>
-
-    <Label Text="How are you feeling today?"
-           FontSize="Large"
-           FontAttributes="Bold"
-           TextColor="#99bg1010"/>
-
-    <StackLayout>
+<!--  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
+  <ContentPage.Content>
+    <!--<AbsoluteLayout BackgroundColor="#FF8080">-->
+      
+      <Label Text="How are you feeling today?"/>
+      <!--  <StackLayout>
       <Grid>
         <Grid.RowDefinitions>
           <RowDefinition Height="Auto" />
@@ -67,7 +58,7 @@
                 Clicked="OnButtonClicked"/>
       </Grid>
 
-    </StackLayout>
-  </AbsoluteLayout>
-
+    </StackLayout>-->
+    <!--</AbsoluteLayout>-->
+  </ContentPage.Content>
 </ContentPage>
