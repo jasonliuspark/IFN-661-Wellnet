@@ -1,73 +1,36 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="wellnet.PatientMoodPage">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+x:Class="wellnet.PatientMoodPage"
+Title="Patient Mood"
+>
+<ListView x:Name="patientList" RowHeight="70" ItemsSource="{Binding PtDetails}">
+   <ListView.ItemTemplate>
+    <DataTemplate> 
+     <ViewCell>
+     <StackLayout Orientation="Horizontal" Padding="15,20">
+<!--Firstname and lastname-->
+	      <StackLayout x:Name="nameStack" Orientation="Horizontal">
+	      <Label x:Name="firstName" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	      FontSize="22" TextColor="Black" Text="{Binding FirstName}"/>
+	      <Label x:Name="lastName" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+	      FontSize="22" TextColor="Black" Text="{Binding LastName}"/>
+	      <Label x:Name="tempStLable" FontFamily="HelveticaNeue-Medium" 
+		      FontSize="22" TextColor="Black" Text=": "/>
+	      </StackLayout>
 
-  <AbsoluteLayout BackgroundColor="#FF8080">
-    <ContentPage.Padding>
-      <OnPlatform x:TypeArguments="Thickness"
-                  iOS="0, 20, 0, 0">
-      </OnPlatform>
-    </ContentPage.Padding>
+<!--Mood-->
+	      <StackLayout x:Name="patientMoodStack" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+		      <Label x:Name="tempStatus" FontFamily="HelveticaNeue-Medium" 
+		      FontSize="22" TextColor="Gray" Text="{Binding PtMood}" />
+	      </StackLayout>
 
-    <Label Text="How are you feeling today?"
-           FontSize="Large"
-           FontAttributes="Bold"
-           TextColor="#99bg1010"/>
 
-    <StackLayout>
-      <Grid>
-        <Grid.RowDefinitions>
-          <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-
-        <Label Text="Happy"
-               BindingContext="{xReference Name=mood}"
-               Grid.Row="0"
-               Grid.Column="1"
-               Font="Large"
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
-        <Label Text="Sad"
-               BindingContext="{xReference Name=mood}"
-               Grid.Row="1"
-               Grid.Column="1"
-               Font="Large"
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
-        <Label Text="Sick"
-               BindingContext="{xReference Name=mood}"
-               Grid.Row="2"
-               Grid.Column="1"
-                   Font="Large"
-                   HorizontalOptions="Center"
-                   VerticalOptions="CenterAndExpand" />
-        <Label Text="Confused"
-               BindingContext="{xReference Name=mood}"
-               Grid.Row="3"
-               Grid.Column="1"
-                   Font="Large"
-                   HorizontalOptions="Center"
-                   VerticalOptions="CenterAndExpand" />
-
-        <Button x:Name="confirmButton"
-                Grid.Row="4"
-                Grid.Column="1"
-                Grid.RowSpan="3"
-                BindingContext="{x:Reference mood}"
-                Text="{Binding Value, 
-                          StringFormat='Confirm {0}'}"
-                HorizontalOptions="Center"
-                VerticalOptions="CenterAndExpand"
-                Clicked="OnButtonClicked"/>
-      </Grid>
-
-    </StackLayout>
-  </AbsoluteLayout>
-
+<!--the Outsidest-->
+      </StackLayout>
+     </ViewCell>
+    </DataTemplate>
+   </ListView.ItemTemplate>
+  </ListView>
 </ContentPage>

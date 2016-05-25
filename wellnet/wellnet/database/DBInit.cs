@@ -51,7 +51,7 @@ namespace wellnet
 				db.DropTable<PatientDetails> ();
 				db.CreateTable<PatientDetails> ();
 				var NewPtDetails = new PatientDetails ();
-				NewPtDetails.PtID = 1;
+				NewPtDetails.PtID = 0;
 				NewPtDetails.FirstName = "John";
 				NewPtDetails.LastName="Doe";
 				NewPtDetails.Age = 25;
@@ -80,11 +80,12 @@ namespace wellnet
 				//testing, should be in MedicalRecord table
 				NewPtDetails.DoctorNotes = "currently in good health";
 				NewPtDetails.PastDisease = "athsma";
+				NewPtDetails.PtMood = "Stable";
 
 				db.Insert (NewPtDetails);
 
 				var NewPtDetails2 = new PatientDetails ();
-				NewPtDetails2.PtID = 2;
+				NewPtDetails2.PtID = 1;
 				NewPtDetails2.FirstName = "Doris";
 				NewPtDetails2.LastName="Morrison";
 				NewPtDetails2.Age = 70;
@@ -113,6 +114,8 @@ namespace wellnet
 				//testing, should be in MedicalRecord table
 				NewPtDetails2.DoctorNotes = "take more care of heart";
 				NewPtDetails2.PastDisease = "premature";
+				//testing, patient mood
+				NewPtDetails2.PtMood = "Happy";
 
 				db.Insert (NewPtDetails2);	
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using wellnet;
@@ -17,13 +16,13 @@ namespace wellnet
         public PatientLoc ()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-
-            SimpleIoc.Default.Register<ViewModels.PatientViewModels.PatientMoodPageViewModel>();
+			SimpleIoc.Default.Register<PatientListPageViewModel> ();
+            SimpleIoc.Default.Register<PatientMoodPageViewModel>();
         }
 
-        public ViewModels.PatientViewModels.PatientMoodPageViewModel PatientMood
+        public PatientMoodPageViewModel PatientMood
         {
-            get { return ServiceLocator.Current.GetInstance<ViewModels.PatientViewModels.PatientMoodPageViewModel>(); }
+            get { return ServiceLocator.Current.GetInstance<PatientMoodPageViewModel>(); }
         }
 
     }
