@@ -8,13 +8,11 @@ using Xamarin.Forms;
 
 namespace wellnet.Views.FamilyViews
 {
-    public partial class FamilyMedication : ContentPage
+    public partial class FamilyVitalsPage : ContentPage
     {
-        public FamilyMedication()
+        public FamilyVitalsPage()
         {
             InitializeComponent();
-            BindingContext = App.FamilyLoc.FamilyMedication1;
-           
         }
     }
 }

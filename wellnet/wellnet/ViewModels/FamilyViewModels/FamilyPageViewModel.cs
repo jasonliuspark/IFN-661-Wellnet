@@ -15,10 +15,23 @@ namespace wellnet
 {
     public class FamilyPageViewModel : ViewModelBase
     {
-        public FamilyPageViewModel()
+        private INavigationService _nav;
+        public FamilyPageViewModel(INavigationService nav )
         {
 
             var db = new DBInit();
+            _nav = nav;
+            familymedication = new RelayCommand(()=> _nav.NavigateTo(FamilyLoc.familyMedication));
+            familyvitals = new RelayCommand(() => _nav.NavigateTo(FamilyLoc.familyVitalsPage));
+        }
+
+     public   ICommand familymedication{
+            get;
+            set;
+        }
+    public ICommand familyvitals {
+            get;
+            set;
         }
     }
 }

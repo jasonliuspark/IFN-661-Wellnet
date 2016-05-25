@@ -30,7 +30,10 @@ namespace wellnet.Views.FamilyViews
                 BorderWidth = 2,
                 BorderColor = Color.Blue,
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
+               
             };
+            BtnDorisMedication.SetBinding(Button.CommandProperty, "familymedication");
+
             var BtnDorisVitals = new Button()
             {
                 Text = "Doris Vitals",
@@ -40,6 +43,9 @@ namespace wellnet.Views.FamilyViews
                 BorderColor = Color.Red,
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
             };
+            BtnDorisVitals.SetBinding(Button.CommandProperty, "familyvitals");
+
+
             var BtnDorisAgenda = new Button()
             {
                 Text = "Doris Agenda",
@@ -77,38 +83,38 @@ namespace wellnet.Views.FamilyViews
 
             /* set click listener */
             //MenuButtonController menu = new MenuButtonController ();
-            BtnDorisMedication.Clicked += onDorisMedicationButtonClicked;
-            BtnDorisVitals.Clicked += onDorisVitalsButtonClicked;
-            BtnDorisAgenda.Clicked += onDorisAgendaButtonClicked;
-            BtnDorisMessages.Clicked += onDorisMessageButtonClicked;
+            //BtnDorisMedication.Clicked += onDorisMedicationButtonClicked;
+            //BtnDorisVitals.Clicked += onDorisVitalsButtonClicked;
+            //BtnDorisAgenda.Clicked += onDorisAgendaButtonClicked;
+            //BtnDorisMessages.Clicked += onDorisMessageButtonClicked;
 
             /* fill the content page*/
             this.Content = DorisMenuStack;
-
+            BindingContext = App.FamilyLoc.FamilyPage;
         }
 
         /*button listeners  */
-        public async void onDorisMedicationButtonClicked(object sender, EventArgs e)
-        {
-            // Family Medication
-            await Navigation.PushAsync(new FamilyMedication());
-        }
+        //public async void onDorisMedicationButtonClicked(object sender, EventArgs e)
+        //{
+        //    // Family Medication
+        //    await Navigation.PushAsync(new FamilyMedication());
+        //}
 
-        public async void onDorisVitalsButtonClicked(object sender, EventArgs e)
-        {
-            // Family Vitals
-            await Navigation.PushAsync(new FamilyVitals());
-        }
-        public void onDorisAgendaButtonClicked(object sender, EventArgs e)
-        {
-            // Famil
-        }
+        //public async void onDorisVitalsButtonClicked(object sender, EventArgs e)
+        //{
+        //    // Family Vitals
+        //    await Navigation.PushAsync(new FamilyVitals());
+        //}
+        //public void onDorisAgendaButtonClicked(object sender, EventArgs e)
+        //{
+        //    // Famil
+        //}
 
-        public async void onDorisMessageButtonClicked(object sender, EventArgs e)
-        {
-            // Family Messages
-            await Navigation.PushAsync(new FamilyMessages());
+        //public async void onDorisMessageButtonClicked(object sender, EventArgs e)
+        //{
+        //    // Family Messages
+        //    await Navigation.PushAsync(new FamilyMessages());
 
-        }
+        ////}
     }
 }
