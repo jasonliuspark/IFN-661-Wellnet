@@ -60,8 +60,6 @@ namespace wellnet.Views.FamilyViews
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
             };
 
-
-
             /* draw button stack */
             var DorisMenuStack = new StackLayout()
             {
