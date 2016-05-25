@@ -1,5 +1,6 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="wellnet.Views.FamilyViews.FamilyMedication"
-Title="Medication List">
+Title="Medication List" BackgroundColor="Green">
+
   <ListView x:Name="MedicationList" RowHeight="70" ItemsSource="{Binding PtDetails}">
     <ListView.ItemTemplate>
       <DataTemplate>

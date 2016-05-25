@@ -15,7 +15,8 @@ namespace wellnet.Droid {
 		}  
 		void RemoveAppIconFromActionBar() {  
 			var actionBar = ((Activity) Context).ActionBar;  
-			actionBar.SetIcon(new ColorDrawable(Color.Transparent.ToAndroid()));  
-		}  
+			actionBar.SetIcon(new ColorDrawable(Color.Transparent.ToAndroid()));
+            
+        }  
 	}  
 }  

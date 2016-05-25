@@ -14,7 +14,7 @@ namespace wellnet.Views.FamilyViews
         {
             InitializeComponent();
             BindingContext = App.FamilyLoc.FamilyMedication1;
-           
+
         }
     }
 }
