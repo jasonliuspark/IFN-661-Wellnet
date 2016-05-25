@@ -19,12 +19,22 @@ namespace wellnet.ViewModels.PatientViewModels
         // private enumerated value for mood
 
         // random message to show patient from list of random messages
-      
-        public PatientMoodPageViewModel( )
-        {
-           
 
+
+        private INavigationService _nav;
+        public PatientMoodPageViewModel(INavigationService nav )
+        {
+            var db = new DBInit();
+            _nav = nav;
+            patientActivitiesButtonCommand = new RelayCommand(() => _nav.NavigateTo(PatientLoc.ptActivitiesPage));
         }
+
+        public ICommand patientActivitiesButtonCommand
+        {
+            get;
+            set;
+        }
+
 
 
         // getter and setter for mood value

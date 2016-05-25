@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 using wellnet.Views.FamilyViews;
+using wellnet.Views.PatientViews;
 
 namespace wellnet
 {
@@ -30,6 +31,7 @@ namespace wellnet
 			nav.Configure(Locator.MenuPage, typeof(StartupMenu));
 			nav.Configure(MediLoc.ptlistPage, typeof(PatientListPage));
             nav.Configure(PatientLoc.ptMoodPage, typeof(PatientMoodPage));
+            nav.Configure(PatientLoc.ptActivitiesPage, typeof(PatientActivitiesPage));
             nav.Configure(FamilyLoc.familyPage, typeof(FamilyPage));
             nav.Configure(FamilyLoc.familyMedication, typeof(FamilyMedication));
             nav.Configure(FamilyLoc.familyVitalsPage, typeof(FamilyVitalsPage));

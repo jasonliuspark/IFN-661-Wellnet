@@ -13,18 +13,26 @@ namespace wellnet
     public class PatientLoc
     {
         public const string ptMoodPage = "PatientMoodPage";
+        public const string ptActivitiesPage = "PatientActivitiesPage";
 
         public PatientLoc ()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<ViewModels.PatientViewModels.PatientMoodPageViewModel>();
+            SimpleIoc.Default.Register<ViewModels.PatientViewModels.PatientActivitiesPageViewModel>();
         }
 
         public ViewModels.PatientViewModels.PatientMoodPageViewModel PatientMood
         {
             get { return ServiceLocator.Current.GetInstance<ViewModels.PatientViewModels.PatientMoodPageViewModel>(); }
         }
+
+        public ViewModels.PatientViewModels.PatientActivitiesPageViewModel PatientActivities
+        {
+            get { return ServiceLocator.Current.GetInstance<ViewModels.PatientViewModels.PatientActivitiesPageViewModel>(); }
+        }
+
 
     }
 }

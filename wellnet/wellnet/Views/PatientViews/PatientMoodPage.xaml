@@ -3,10 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="wellnet.PatientMoodPage">
 <!--  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
-  <ContentPage.Content>
+  
     <!--<AbsoluteLayout BackgroundColor="#FF8080">-->
-      
+    <StackLayout>
       <Label Text="How are you feeling today?"/>
+      <Button Text= "Patient Activities" TextColor= "Red" BorderRadius="2"
+      BorderWidth="2" BorderColor="Blue" Font="Large"
+      Command="{Binding patientActivitiesButtonCommand}"/>
+    </StackLayout>
       <!--  <StackLayout>
       <Grid>
         <Grid.RowDefinitions>
@@ -60,5 +64,5 @@
 
     </StackLayout>-->
     <!--</AbsoluteLayout>-->
-  </ContentPage.Content>
+  
 </ContentPage>
