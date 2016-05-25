@@ -16,6 +16,7 @@ namespace wellnet
         public const string familyPage = "FamilyPage";
         public const string familyMedication = "FamilyMedication";
         public const string familyVitalsPage = "FamilyVitalsPage";
+        public const string familyAgendaPage = "FamilyAgendaPage";
 
         public FamilyLoc()
         {
@@ -24,6 +25,7 @@ namespace wellnet
             SimpleIoc.Default.Register<FamilyPageViewModel>();
             SimpleIoc.Default.Register<FamilyMedicationViewModel>();
             SimpleIoc.Default.Register<FamilyVitalsPageViewModel>();
+            SimpleIoc.Default.Register<FamilyAgendaPageViewModel>();
         }
 
         public FamilyPageViewModel FamilyPage
@@ -39,5 +41,12 @@ namespace wellnet
         {
             get { return ServiceLocator.Current.GetInstance<FamilyVitalsPageViewModel>(); }
         }
+
+        public FamilyAgendaPageViewModel FamilyAgenda
+        {
+            get { return ServiceLocator.Current.GetInstance<FamilyAgendaPageViewModel>(); }
+        }
+
+
     }
 }

@@ -15,7 +15,7 @@ namespace wellnet.Views.FamilyViews
             /* Draw Status Block */
             var MessageText = new Label()
             {
-                Text = "Hello Wayne. Dorris is feeling HAPPY today. She has an appointment with the doctor at 2pm.",
+                Text = "Hello Wayne. Dorris is feeling HAPPY today. She has an appointment with Dr. Doe at 3pm.",
                 TextColor = Color.Red,
                 BackgroundColor = Color.FromHex("b39ddb"),
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
@@ -55,6 +55,7 @@ namespace wellnet.Views.FamilyViews
                 BorderColor = Color.Blue,
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
             };
+            BtnDorisAgenda.SetBinding(Button.CommandProperty, "familyagenda");
 
             var BtnDorisMessages = new Button()
             {

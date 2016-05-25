@@ -23,6 +23,7 @@ namespace wellnet
             _nav = nav;
             familymedication = new RelayCommand(()=> _nav.NavigateTo(FamilyLoc.familyMedication));
             familyvitals = new RelayCommand(() => _nav.NavigateTo(FamilyLoc.familyVitalsPage));
+            familyagenda = new RelayCommand(() => _nav.NavigateTo(FamilyLoc.familyAgendaPage));
         }
 
      public   ICommand familymedication{
@@ -33,5 +34,11 @@ namespace wellnet
             get;
             set;
         }
+
+    public ICommand familyagenda
+    {
+        get;
+        set;
+    }
     }
 }

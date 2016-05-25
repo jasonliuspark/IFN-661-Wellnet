@@ -6,33 +6,15 @@ Title="Medication List">
         <ViewCell>
           <StackLayout Orientation="Horizontal" Padding="10">
             <StackLayout Orientation="Vertical">
-              <!--Firstname and lastname-->
+              <!--Medication-->
               <StackLayout x:Name="nameStack" Orientation="Horizontal">
-                <Label x:Name="xxxxxxx" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-                FontSize="22" TextColor="Black" Text="{Binding FirstName}"/>
-                <Label x:Name="yyyyyyyyy" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-                FontSize="22" TextColor="Black" Text="{Binding LastName}"/>
+                <Label x:Name="Medication" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+                FontSize="22" TextColor="White" Text="{Binding DrugName}"/>
+                <Label x:Name="Dosage" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+                FontSize="22" TextColor="White" Text="{Binding Dosage}"/>
+                <Label x:Name="Dose Time" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+                FontSize="22" TextColor="White" Text="{Binding DosingTime}"/>
               </StackLayout>
-
-              <!--Temp and heartrate-->
-              <StackLayout Orientation="Horizontal">
-                <StackLayout x:Name="bodyTempStack" Orientation="Horizontal">
-                  <Label x:Name="tempStLable" FontFamily="HelveticaNeue-Medium"
-                  FontSize="15" TextColor="Gray" Text="Temp: "/>
-                  <Label x:Name="tempStatus" FontFamily="HelveticaNeue-Medium"
-                  FontSize="15" TextColor="Gray" Text="{Binding Temp}" />
-                </StackLayout>
-
-                <StackLayout x:Name="heartRateStack" Orientation="Horizontal">
-                  <Label x:Name="heartLable" FontFamily="HelveticaNeue-Medium"
-                  FontSize="15" TextColor="Gray" Text="HeartRate: "/>
-                  <Label x:Name="heartStatus" FontFamily="HelveticaNeue-Medium"
-                  FontSize="15" TextColor="Gray" Text="{Binding HeartRate}"/>
-                </StackLayout>
-              </StackLayout>
-
-              <!--TODO:Add button to popup patient detail(not monitoring status) info page-->
-
               <!--Vertical stack wrap-->
             </StackLayout>
 
@@ -44,115 +26,3 @@ Title="Medication List">
   </ListView>
 </ContentPage>
 
-
-
-<!--<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="wellnet.Views.FamilyViews.FamilyMedication"
-             Title="Family Member Medication Page">
-
-  <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="Auto" />
-      <RowDefinition Height="Auto" />
-      <RowDefinition Height="Auto" />
-      <RowDefinition Height="Auto" />
-    </Grid.RowDefinitions>
-
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="Auto" />
-      <ColumnDefinition Width="Auto" />
-      <ColumnDefinition Width="Auto" />
-      <ColumnDefinition Width="Auto" />
-    </Grid.ColumnDefinitions>
-
-    --><!--<Grid.RowDefinitions>
-      <RowDefinition Height="Auto" />
-      <RowDefinition Height="*" />
-      <RowDefinition Height="100" />
-    </Grid.RowDefinitions>
-
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="Auto" />
-      <ColumnDefinition Width="*" />
-      <ColumnDefinition Width="100" />
-    </Grid.ColumnDefinitions>--><!--
-
-    <Label Text="Medication     "
-           Grid.Row="0" Grid.Column="0"
-           TextColor="White"
-           BackgroundColor="Blue" />
-
-    <Label Text="Dose      "
-       Grid.Row="0" Grid.Column="1"
-       TextColor="White"
-       BackgroundColor="Blue" />
-
-    <Label Text="Time        "
-       Grid.Row="0" Grid.Column="2"
-       TextColor="White"
-       BackgroundColor="Blue" />
-
-    <Label Text="not rite"
-           Grid.Row="1" Grid.Column="0"
-           TextColor="Purple"
-           BackgroundColor="Aqua" />
-
-    <Label Text="Dose 1"
-           Grid.Row="1" Grid.Column="1"
-           TextColor="Purple"
-           BackgroundColor="Aqua" />
-
-    <Label Text="Time 1"
-              Grid.Row="1" Grid.Column="2"
-              TextColor="Purple"
-              BackgroundColor="Aqua" />
-
-    <Label Text="Med 2"
-           Grid.Row="2" Grid.Column="0"
-           TextColor="Purple"
-           BackgroundColor="Aqua" />
-
-    <Label Text="Dose 2"
-           Grid.Row="2" Grid.Column="1"
-           TextColor="Purple"
-           BackgroundColor="Aqua" />
-
-    <Label Text="Time 2"
-           Grid.Row="2" Grid.Column="2"
-           TextColor="Purple"
-           BackgroundColor="Aqua" />
-
-    <Label Text="Med 3"
-           Grid.Row="3" Grid.Column="0"
-           TextColor="Purple"
-           BackgroundColor="Aqua" />
-
-    <Label Text="Dose 3"
-           Grid.Row="3" Grid.Column="1"
-           TextColor="Purple"
-           BackgroundColor="Aqua" />
-
-    <Label Text="Time 3"
-              Grid.Row="3" Grid.Column="2"
-              TextColor="Purple"
-              BackgroundColor="Aqua" />
-
-    <Label Text="Med 4"
-           Grid.Row="4" Grid.Column="0"
-           TextColor="Purple"
-           BackgroundColor="Aqua" />
-
-    <Label Text="Dose 4"
-           Grid.Row="4" Grid.Column="1"
-           TextColor="Purple"
-           BackgroundColor="Aqua" />
-
-    <Label Text="Time 4"
-              Grid.Row="4" Grid.Column="2"
-              TextColor="Purple"
-              BackgroundColor="Aqua"/>
-
-  </Grid>
-</ContentPage>-->
