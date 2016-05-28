@@ -27,6 +27,12 @@ namespace wellnet.ViewModels.PatientViewModels
             var db = new DBInit();
             _nav = nav;
             patientActivitiesButtonCommand = new RelayCommand(() => _nav.NavigateTo(PatientLoc.ptActivitiesPage));
+			imagetap= new TapGestureRecognizer {
+				Command = new Command (() => 
+					_nav.NavigateTo(PatientLoc.ptActivitiesPage)
+				),
+				NumberOfTapsRequired = 1
+				};
         }
 
         public ICommand patientActivitiesButtonCommand
@@ -34,6 +40,11 @@ namespace wellnet.ViewModels.PatientViewModels
             get;
             set;
         }
+
+		public TapGestureRecognizer imagetap {
+			get;
+			set;
+		}
 
 
 

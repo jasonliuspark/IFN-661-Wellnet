@@ -13,6 +13,8 @@ namespace wellnet
         {
             InitializeComponent();
 			BindingContext = App.PatientLoc.PatientMood;
-        }
+			imagebutton.GestureRecognizers.Add (App.PatientLoc.PatientMood.imagetap);
+		
+		}
     }
 }
