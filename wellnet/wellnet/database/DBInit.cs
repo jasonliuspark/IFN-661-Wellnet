@@ -31,97 +31,96 @@ namespace wellnet
 		
 		}
 
-//		public IEnumerable<PatientMonitoringStatus> GetStatus()
-//
-//        {
-//           
-//			return (from t in db.Table<PatientMonitoringStatus>() select t).ToList();
-//			
-//		}
-//
+        //		public IEnumerable<PatientMonitoringStatus> GetStatus()
+        //
+        //        {
+        //           
+        //			return (from t in db.Table<PatientMonitoringStatus>() select t).ToList();
+        //			
+        //		}
+        //
 
 
 
-		public void PatientDetailsInit(SQLiteConnection db)
-		{
-			
-			//SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();
+        public void PatientDetailsInit(SQLiteConnection db)
+        {
 
-			if (db.Table<PatientDetails> ().Count() != 0) {
-				db.DropTable<PatientDetails> ();
-				db.CreateTable<PatientDetails> ();
-				var NewPtDetails = new PatientDetails ();
-				NewPtDetails.PtID = 0;
-				NewPtDetails.FirstName = "John";
-				NewPtDetails.LastName="Doe";
-				NewPtDetails.Age = 25;
-				NewPtDetails.DOB="12/04/1991";
-				NewPtDetails.Gender="Male";
-				NewPtDetails.AdmissionTime="13/04/2015";
-				NewPtDetails.ContactNumber = 0434105253;
-				NewPtDetails.Address="1 Apple street 4000 QLD";
-				NewPtDetails.MedicareNum = "0199938374747";
-				NewPtDetails.MedicareExpiry = "13/05/2018";
-				//testing, should be in monitoring status table
-				NewPtDetails.HeartRate = 96; 
-				NewPtDetails.Temp = 36.8;
-				NewPtDetails.BloodPressureHigh = 120;
-				NewPtDetails.BloodPressureLow = 81;
-				NewPtDetails.ECGRefference = 5;
-				NewPtDetails.ECGPic = "John_ecg.gif";
-				NewPtDetails.RoomNo = "C-HTA-406";
-				NewPtDetails.Location = "John_location.jpg";
-				NewPtDetails.Status = "Normal";
-				//testing, should be in drugHistry table
-				NewPtDetails.DrugName = "Panadol";
-				NewPtDetails.Dosage = "1 pill";
-				NewPtDetails.DosingTime = "2/day";
-				NewPtDetails.Strength = "weak";
-				//testing, should be in MedicalRecord table
-				NewPtDetails.DoctorNotes = "currently in good health";
-				NewPtDetails.PastDisease = "athsma";
-				NewPtDetails.PtMood = "Stable";
+            //SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();
 
-				db.Insert (NewPtDetails);
+            if (db.Table<PatientDetails>().Count() != 0)
+            {
+                db.DropTable<PatientDetails>();
+                db.CreateTable<PatientDetails>();
+                var NewPtDetails = new PatientDetails();
+                NewPtDetails.PtID = 0;
+                NewPtDetails.FirstName = "John";
+                NewPtDetails.LastName = "Doe";
+                NewPtDetails.Age = 25;
+                NewPtDetails.DOB = "12/04/1991";
+                NewPtDetails.Gender = "Male";
+                NewPtDetails.AdmissionTime = "13/04/2015";
+                NewPtDetails.ContactNumber = 0434105253;
+                NewPtDetails.Address = "1 Apple street 4000 QLD";
+                NewPtDetails.MedicareNum = "0199938374747";
+                NewPtDetails.MedicareExpiry = "13/05/2018";
+                //testing, should be in monitoring status table
+                NewPtDetails.HeartRate = 96;
+                NewPtDetails.Temp = 36.8;
+                NewPtDetails.BloodPressureHigh = 120;
+                NewPtDetails.BloodPressureLow = 81;
+                NewPtDetails.ECGRefference = 5;
+                NewPtDetails.ECGPic = "John_ecg.gif";
+                NewPtDetails.RoomNo = "C-HTA-406";
+                NewPtDetails.Location = "John_location.jpg";
+                NewPtDetails.Status = "Normal";
+                //testing, should be in drugHistry table
+                NewPtDetails.DrugName = "Panadol";
+                NewPtDetails.Dosage = "1 pill";
+                NewPtDetails.DosingTime = "2/day";
+                NewPtDetails.Strength = "weak";
+                //testing, should be in MedicalRecord table
+                NewPtDetails.DoctorNotes = "currently in good health";
+                NewPtDetails.PastDisease = "athsma";
+                NewPtDetails.PtMood = "Stable";
 
-				var NewPtDetails2 = new PatientDetails ();
-				NewPtDetails2.PtID = 1;
-				NewPtDetails2.FirstName = "Doris";
-				NewPtDetails2.LastName="Morrison";
-				NewPtDetails2.Age = 70;
-				NewPtDetails2.DOB="12/04/1946";
-				NewPtDetails2.Gender="Female";
-				NewPtDetails2.AdmissionTime="13/04/2015";
-				NewPtDetails2.ContactNumber = 0434105253;
-				NewPtDetails2.Address="1 Apple street 4000 QLD";
-				NewPtDetails2.MedicareNum = "0199938370989";
-				NewPtDetails2.MedicareExpiry = "13/05/2018";
-				//testing, should be in monitoring status table
-				NewPtDetails2.HeartRate = 71; 
-				NewPtDetails2.Temp = 37.1;
-				NewPtDetails2.BloodPressureHigh = 110;
-				NewPtDetails2.BloodPressureLow = 61;
-				NewPtDetails2.ECGRefference = 5;
-				NewPtDetails2.ECGPic = "John_ecg.gif";
-				NewPtDetails2.RoomNo = "C-HTA-409";
-				NewPtDetails2.Location = "Doris_location.jpg";
-				NewPtDetails2.Status = "Normal";
-				//testing, should be in drugHistry table
-				NewPtDetails2.DrugName = "Panadol";
-				NewPtDetails2.Dosage = "1 pill";
-				NewPtDetails2.DosingTime = "2/day";
-				NewPtDetails2.Strength = "weak";
-				//testing, should be in MedicalRecord table
-				NewPtDetails2.DoctorNotes = "take more care of heart";
-				NewPtDetails2.PastDisease = "premature";
-				//testing, patient mood
-				NewPtDetails2.PtMood = "Happy";
+                db.Insert(NewPtDetails);
 
-				db.Insert (NewPtDetails2);	
+                var NewPtDetails2 = new PatientDetails();
+                NewPtDetails2.PtID = 1;
+                NewPtDetails2.FirstName = "Doris";
+                NewPtDetails2.LastName = "Morrison";
+                NewPtDetails2.Age = 70;
+                NewPtDetails2.DOB = "12/04/1946";
+                NewPtDetails2.Gender = "Female";
+                NewPtDetails2.AdmissionTime = "13/04/2015";
+                NewPtDetails2.ContactNumber = 0434105253;
+                NewPtDetails2.Address = "1 Apple street 4000 QLD";
+                NewPtDetails2.MedicareNum = "0199938370989";
+                NewPtDetails2.MedicareExpiry = "13/05/2018";
+                //testing, should be in monitoring status table
+                NewPtDetails2.HeartRate = 71;
+                NewPtDetails2.Temp = 37.1;
+                NewPtDetails2.BloodPressureHigh = 110;
+                NewPtDetails2.BloodPressureLow = 61;
+                NewPtDetails2.ECGRefference = 5;
+                NewPtDetails2.ECGPic = "John_ecg.gif";
+                NewPtDetails2.RoomNo = "C-HTA-409";
+                NewPtDetails2.Location = "Doris_location.jpg";
+                NewPtDetails2.Status = "Normal";
+                //testing, should be in drugHistry table
+                NewPtDetails2.DrugName = "Razadyne";
+                NewPtDetails2.Dosage = "500mg";
+                NewPtDetails2.DosingTime = "a.m.";
+                NewPtDetails2.Strength = "weak";
+                //testing, should be in MedicalRecord table
+                NewPtDetails2.DoctorNotes = "take more care of heart";
+                NewPtDetails2.PastDisease = "premature";
+                //testing, patient mood
+                NewPtDetails2.PtMood = "Happy";
+                db.Insert(NewPtDetails2);
 
-
-			}
-		}
+            }
+        }
 		public void PatientDrugHistoryInit(SQLiteConnection db)
 		{
 			//SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();

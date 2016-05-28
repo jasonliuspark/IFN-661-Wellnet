@@ -30,8 +30,13 @@ namespace wellnet.Views.FamilyViews
                 BorderWidth = 2,
                 BorderColor = Color.Blue,
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
-               
+
             };
+            //var BtnDorisMedication = new Image { Aspect = Aspect.AspectFit };
+            //{
+            //    BtnDorisMedication.Source = ImageSource.FromFile("MedicationButton.jpg");
+            //};
+
             BtnDorisMedication.SetBinding(Button.CommandProperty, "familymedication");
 
             var BtnDorisVitals = new Button()

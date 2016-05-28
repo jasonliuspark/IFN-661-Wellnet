@@ -20,7 +20,7 @@ namespace wellnet.Views.FamilyViews
                 TextColor = Color.Red,
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
             };
-            var AgendaStatusPic = new Image { Aspect = Aspect.AspectFit };
+            var AgendaStatusPic = new Image { Aspect = Aspect.Fill };
             {
                 AgendaStatusPic.Source = ImageSource.FromFile("Agenda.jpg");
             };
@@ -45,7 +45,7 @@ namespace wellnet.Views.FamilyViews
                     },
                 ColumnDefinitions ={
                     new ColumnDefinition{ Width=GridLength.Auto},
-                    new ColumnDefinition{ Width= new GridLength(1, GridUnitType.Star)},
+                    //new ColumnDefinition{ Width= new GridLength(1, GridUnitType.Star)},
                 }
             };
 
@@ -53,7 +53,7 @@ namespace wellnet.Views.FamilyViews
             AgendaGrid.Children.Add(AgendaStatusPic);
  
             /*grid style*/
-            this.Padding = new Thickness(30, 30, 10, 10);
+            //this.Padding = new Thickness(30, 30, 10, 10);
             this.Content = AgendaGrid;
         }
     }
