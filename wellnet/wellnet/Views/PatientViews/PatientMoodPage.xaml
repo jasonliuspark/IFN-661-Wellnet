@@ -10,6 +10,9 @@
       <Button Text= "Patient Activities" TextColor= "Red" BorderRadius="2"
       BorderWidth="2" BorderColor="Blue" Font="Large"
       Command="{Binding patientActivitiesButtonCommand}"/>
+
+      <Image x:Name="imagebutton" Source="BodyTemp.jpg" 
+      /> 
     </StackLayout>
       <!--  <StackLayout>
       <Grid>

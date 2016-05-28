@@ -78,7 +78,10 @@ namespace wellnet.Droid
 			public const int Messages = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int StepMonitor = 2130837515;
+			public const int SmallAgenda = 2130837515;
+			
+			// aapt resource value: 0x7f02000c
+			public const int StepMonitor = 2130837516;
 			
 			static Drawable()
 			{
