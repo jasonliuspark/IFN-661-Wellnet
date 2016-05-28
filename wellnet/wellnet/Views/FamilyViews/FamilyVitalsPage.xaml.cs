@@ -84,7 +84,7 @@ namespace wellnet.Views.FamilyViews
                     new RowDefinition{Height= new GridLength(30)},
                     new RowDefinition{Height= new GridLength(130)},
                     new RowDefinition{Height= new GridLength(30)},
-                    new RowDefinition{Height= new GridLength(130)},
+                    new RowDefinition{Height= new GridLength(190)},
                     },
                 ColumnDefinitions ={
                     new ColumnDefinition{ Width=GridLength.Auto},
