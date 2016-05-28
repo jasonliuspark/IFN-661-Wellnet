@@ -16,8 +16,8 @@ namespace wellnet.Views.FamilyViews
             var MessageText = new Label()
             {
                 Text = "Hello Wayne. Dorris is feeling HAPPY today. She has an appointment with Dr. Doe at 3pm.",
-                TextColor = Color.Red,
-                BackgroundColor = Color.FromHex("b39ddb"),
+                TextColor = Color.White,
+                //BackgroundColor = Color.FromHex("b39ddb"),
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
             };
 
