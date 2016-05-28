@@ -36,6 +36,7 @@ namespace wellnet
             nav.Configure(FamilyLoc.familyMedication, typeof(FamilyMedication));
             nav.Configure(FamilyLoc.familyVitalsPage, typeof(FamilyVitalsPage));
             nav.Configure(FamilyLoc.familyAgendaPage, typeof(FamilyAgenda));
+            nav.Configure(FamilyLoc.familyMessagesPage, typeof(FamilyMessagesPage));
             //nav.Configure(Locator.ThirdPage, typeof(ThirdPage));
             SimpleIoc.Default.Register<INavigationService>(() => nav);
 

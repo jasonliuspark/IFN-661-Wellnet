@@ -71,6 +71,8 @@ namespace wellnet.Views.FamilyViews
                 BorderColor = Color.Blue,
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
             };
+            BtnDorisMessages.SetBinding(Button.CommandProperty, "familymessages");
+
 
             /* draw button stack */
             var DorisMenuStack = new StackLayout()
@@ -99,28 +101,6 @@ namespace wellnet.Views.FamilyViews
             BindingContext = App.FamilyLoc.FamilyPage;
         }
 
-        /*button listeners  */
-        //public async void onDorisMedicationButtonClicked(object sender, EventArgs e)
-        //{
-        //    // Family Medication
-        //    await Navigation.PushAsync(new FamilyMedication());
-        //}
 
-        //public async void onDorisVitalsButtonClicked(object sender, EventArgs e)
-        //{
-        //    // Family Vitals
-        //    await Navigation.PushAsync(new FamilyVitals());
-        //}
-        //public void onDorisAgendaButtonClicked(object sender, EventArgs e)
-        //{
-        //    // Famil
-        //}
-
-        //public async void onDorisMessageButtonClicked(object sender, EventArgs e)
-        //{
-        //    // Family Messages
-        //    await Navigation.PushAsync(new FamilyMessages());
-
-        ////}
     }
 }

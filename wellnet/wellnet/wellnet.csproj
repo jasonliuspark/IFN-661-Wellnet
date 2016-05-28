@@ -34,6 +34,7 @@
     <Compile Include="PatientLoc.cs" />
     <Compile Include="ViewModels\FamilyViewModels\FamilyAgendaPageViewModel.cs" />
     <Compile Include="ViewModels\FamilyViewModels\FamilyMedicationViewModel.cs" />
+    <Compile Include="ViewModels\FamilyViewModels\FamilyMessagesPageViewModel.cs" />
     <Compile Include="ViewModels\FamilyViewModels\FamilyPageViewModel.cs" />
     <Compile Include="ViewModels\FamilyViewModels\FamilyVitalsPageViewModel.cs" />
     <Compile Include="ViewModels\PatientViewModels\PatientActivitiesPageViewModel.cs" />
@@ -43,6 +44,9 @@
     </Compile>
     <Compile Include="Views\FamilyViews\FamilyMedication.xaml.cs">
       <DependentUpon>FamilyMedication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FamilyViews\FamilyMessagesPage.xaml.cs">
+      <DependentUpon>FamilyMessagesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FamilyViews\FamilyPage.xaml.cs">
       <DependentUpon>FamilyPage.xaml</DependentUpon>
@@ -173,11 +177,16 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-<ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="Views\PatientViews\PatientActivitiesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-
+  <ItemGroup>
+    <EmbeddedResource Include="Views\FamilyViews\FamilyMessagesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
