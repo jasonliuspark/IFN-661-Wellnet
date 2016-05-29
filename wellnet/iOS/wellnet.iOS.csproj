@@ -121,5 +121,23 @@
     <BundleResource Include="Resources\Doris_location.jpg" />
     <BundleResource Include="Resources\John_location.jpg" />
     <BundleResource Include="Resources\John_ecg.gif" />
+    <BundleResource Include="Resources\Agenda Button.png" />
+    <BundleResource Include="Resources\Agenda.jpg" />
+    <BundleResource Include="Resources\AgendaButton.jpg" />
+    <BundleResource Include="Resources\BodyTemp.jpg" />
+    <BundleResource Include="Resources\Exercise.JPG" />
+    <BundleResource Include="Resources\Exertion.jpg" />
+    <BundleResource Include="Resources\HeartRate.jpg" />
+    <BundleResource Include="Resources\Medication Button.png" />
+    <BundleResource Include="Resources\MedicationButton.jpg" />
+    <BundleResource Include="Resources\Messages Button.png" />
+    <BundleResource Include="Resources\Messages.jpg" />
+    <BundleResource Include="Resources\MessagesButton.jpg" />
+    <BundleResource Include="Resources\Mood Button.png" />
+    <BundleResource Include="Resources\SmallAgenda.jpg" />
+    <BundleResource Include="Resources\StepMonitor.jpg" />
+    <BundleResource Include="Resources\VitalsButton.jpg" />
+    <BundleResource Include="Resources\VitalsButton.png" />
+    <BundleResource Include="Resources\_MedicationButton.jpg" />
   </ItemGroup>
 </Project>
