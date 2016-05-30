@@ -15,9 +15,10 @@ namespace wellnet.Views.FamilyViews
             /* Draw Status Block */
             var MessageText = new Label()
             {
-                Text = " Hello Wayne. Dorris is feeling HAPPY    today. She has an appointment with Dr.    Doe at 3pm.",
+                Text = "Hello Wayne. Dorris is feeling HAPPY today. She has an appointment with Dr. Doe at 3pm.",
                 TextColor = Color.White,
                 BackgroundColor = Color.FromHex("2196F3"),
+                
                // BorderColor = Color.FromHex("4527A0"),
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label))              
 
@@ -102,9 +103,7 @@ namespace wellnet.Views.FamilyViews
             };
 
             /* fill the stack with buttons*/
-
             DorisMenuStack.Children.Add(MessageText);
-            
             DorisMenuStack.Children.Add(BtnDorisMedication);
             DorisMenuStack.Children.Add(BtnDorisVitals);
             DorisMenuStack.Children.Add(BtnDorisAgenda);
