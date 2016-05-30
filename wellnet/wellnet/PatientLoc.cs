@@ -15,6 +15,7 @@ namespace wellnet
     {
         public const string ptMoodPage = "PatientMoodPage";
         public const string ptActivitiesPage = "PatientActivitiesPage";
+        public const string ptMedicationPage = "PatientMedicationPage";
 
         public PatientLoc()
         {
