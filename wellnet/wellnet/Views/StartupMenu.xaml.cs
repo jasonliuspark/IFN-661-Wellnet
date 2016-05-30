@@ -56,14 +56,14 @@ namespace wellnet
 //	        /* fill the content page*/
 			InitializeComponent();
 			BindingContext = App.Locator.startmenu;
-            patient.SetBinding(TapGestureRecognizer.CommandProperty, "patientButtonCommand");
-            patient.SetBinding(TapGestureRecognizer.NumberOfTapsRequiredProperty, "1");
-
-            family.SetBinding(TapGestureRecognizer.CommandProperty, "familyButtonCommand");
-            family.SetBinding(TapGestureRecognizer.NumberOfTapsRequiredProperty, "1");
-
-            doc_nurse.SetBinding(TapGestureRecognizer.CommandProperty, "doc_buttonCommand");
-            doc_nurse.SetBinding(TapGestureRecognizer.NumberOfTapsRequiredProperty, "1");
+//            patient.SetBinding(TapGestureRecognizer.CommandProperty, "patientButtonCommand");
+//            patient.SetBinding(TapGestureRecognizer.NumberOfTapsRequiredProperty, "1");
+//
+//            family.SetBinding(TapGestureRecognizer.CommandProperty, "familyButtonCommand");
+//            family.SetBinding(TapGestureRecognizer.NumberOfTapsRequiredProperty, "1");
+//
+//            doc_nurse.SetBinding(TapGestureRecognizer.CommandProperty, "doc_buttonCommand");
+//            doc_nurse.SetBinding(TapGestureRecognizer.NumberOfTapsRequiredProperty, "1");
 
             //patientViewBtn.SetBinding(Button.CommandProperty,new Binding("doc_buttonCommand",0));
             //this.Content = MenuStack;

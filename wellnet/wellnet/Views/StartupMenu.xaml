@@ -12,9 +12,21 @@ x:Class="wellnet.StartupMenu" Title="Start Menu">
 	<Button Text= "Doc/Nurse view" TextColor= "Red" BorderRadius="2"
 	BorderWidth="2" BorderColor="Blue" Font="Large"
 	Command="{Binding doc_buttonCommand}"/>-->
-    <Image x:Name="patient" Source="resident.png"/>
-    <Image x:Name="family" Source="family.png"/>
-    <Image x:Name="doc_nurse" Source="doctor_nurse.png"/>
+    <Image x:Name="patient" Source="resident.png">
+   <Image.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding patientButtonCommand}"/>
+    </Image.GestureRecognizers>
+    </Image>
+    <Image x:Name="family" Source="family.png">
+    <Image.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding familyButtonCommand}"/>
+    </Image.GestureRecognizers>
+    </Image>
+    <Image x:Name="doc_nurse" Source="doctor_nurse.png">
+    <Image.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding doc_buttonCommand}"/>
+    </Image.GestureRecognizers>
+    </Image>
 
   </StackLayout> 	 	 	 
 
