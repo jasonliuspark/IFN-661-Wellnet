@@ -3,7 +3,7 @@
 xmlns:local="clr-namespace:wellnet; assembly=wellnet"
 x:Class="wellnet.StartupMenu" Title="Start Menu">
 	<StackLayout Spacing="10">
-	<Button Text= "Patient View" TextColor= "Red" BorderRadius="2"
+	<!--<Button Text= "Patient View" TextColor= "Red" BorderRadius="2"
 	BorderWidth="2" BorderColor="Blue" Font="Large"
   Command="{Binding patientButtonCommand}"/>
 	<Button Text= "Family view" TextColor= "Red" BorderRadius="2"
@@ -11,7 +11,11 @@ x:Class="wellnet.StartupMenu" Title="Start Menu">
     Command="{Binding familyButtonCommand}" />
 	<Button Text= "Doc/Nurse view" TextColor= "Red" BorderRadius="2"
 	BorderWidth="2" BorderColor="Blue" Font="Large"
-	Command="{Binding doc_buttonCommand}"/>
-	</StackLayout> 	 	 	 
+	Command="{Binding doc_buttonCommand}"/>-->
+    <Image x:Name="patient" Source="resident.png"/>
+    <Image x:Name="family" Source="family.png"/>
+    <Image x:Name="doc_nurse" Source="doctor_nurse.png"/>
+
+  </StackLayout> 	 	 	 
 
 </ContentPage>

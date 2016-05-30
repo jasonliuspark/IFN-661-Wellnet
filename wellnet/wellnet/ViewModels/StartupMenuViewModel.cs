@@ -23,9 +23,51 @@ namespace wellnet
 			doc_buttonCommand = new RelayCommand (()=>_nav.NavigateTo(MediLoc.ptlistPage));
             patientButtonCommand = new RelayCommand(() => _nav.NavigateTo(PatientLoc.ptMoodPage));
             familyButtonCommand = new RelayCommand(() => _nav.NavigateTo(FamilyLoc.familyPage));
-        }
 
-		public ICommand doc_buttonCommand {
+
+            //docTap = new TapGestureRecognizer
+            //{
+            //    Command = new Command(() =>
+            //      _nav.NavigateTo(MediLoc.ptlistPage)
+            //     ),
+            //    NumberOfTapsRequired = 1
+            //     };
+            //familyTap = new TapGestureRecognizer
+            //{
+            //    Command = new Command(() =>
+            //      _nav.NavigateTo(FamilyLoc.familyPage)
+            //     ),
+            //    NumberOfTapsRequired = 1
+            //};
+            //patientTap = new TapGestureRecognizer
+            //{
+            //    Command = new Command(() =>
+            //      _nav.NavigateTo(PatientLoc.ptMoodPage)
+            //     ),
+            //    NumberOfTapsRequired = 1
+            //};
+
+
+        }
+        // public TapGestureRecognizer docTap
+        //  {
+        //      get;
+        //      set;
+        //  }
+
+        //public TapGestureRecognizer patientTap
+        //{
+        //    get;
+        //    set;
+        //}
+
+        //public TapGestureRecognizer familyTap
+        //{
+        //    get;
+        //    set;
+        //}
+
+        public ICommand doc_buttonCommand {
 			get;
 			set;
 		}

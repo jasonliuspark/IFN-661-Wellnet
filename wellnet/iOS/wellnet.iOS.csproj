@@ -140,4 +140,13 @@
     <BundleResource Include="Resources\VitalsButton.png" />
     <BundleResource Include="Resources\_MedicationButton.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\doctor_nurse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\family.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\resident.png" />
+  </ItemGroup>
 </Project>
