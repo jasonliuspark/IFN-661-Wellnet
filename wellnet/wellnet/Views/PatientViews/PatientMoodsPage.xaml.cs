@@ -8,11 +8,11 @@ using Xamarin.Forms;
 
 namespace wellnet.Views.PatientViews
 {
-    public partial class PatientMoodsPage : ContentPage
+    public partial class PatientMoods : ContentPage
     {
-        public void PatientMoods()
+        public PatientMoods()
         {
-            InitializeComponent();
+             //InitializeComponent();
             /* Moods */
             var MoodsStatus = new Label()
             {
@@ -22,7 +22,7 @@ namespace wellnet.Views.PatientViews
             };
             var MoodsStatusPic = new Image { Aspect = Aspect.AspectFit };
             {
-                MoodsStatusPic.Source = ImageSource.FromFile("SmallMoods.jpg");
+                MoodsStatusPic.Source = ImageSource.FromFile("SmallAgenda.jpg");
             };
 
             var BackgroundGrid = new Image();
@@ -38,7 +38,7 @@ namespace wellnet.Views.PatientViews
             /*monitoring grids layout */
             var MoodsGrid = new Grid
             {
-                VerticalOptions = LayoutOptions.Start,   //.FillAndExpand,
+                VerticalOptions = LayoutOptions.Center,   //.FillAndExpand,
                 RowDefinitions ={
                     new RowDefinition{Height=530},
                     //new RowDefinition{Height= new GridLength(1, GridUnitType.Star)},
@@ -49,8 +49,7 @@ namespace wellnet.Views.PatientViews
                 }
             };
 
-            /*fill blood presure stack */
-            MoodsGrid.Children.Add(MoodsStatusPic);
+          //  MoodsGrid.Children.Add(MoodsStatusPic);
 
             /*grid style*/
             //this.Padding = new Thickness(30, 30, 10, 10);

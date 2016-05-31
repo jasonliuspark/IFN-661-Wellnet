@@ -25,15 +25,15 @@ namespace wellnet.Views.FamilyViews
             };
 
             var imgBtnDorisMedication = new FileImageSource();
-            imgBtnDorisMedication.File = "MedicationButton.jpg";
+            imgBtnDorisMedication.File = "btnMedication.png";
 
             /*draw menu buttons */
             var BtnDorisMedication = new Button()
             {
                 //Text = "Doris Medication",
                 Image = imgBtnDorisMedication,
-                TextColor = Color.FromHex("EDE7F6"),
-                BackgroundColor = Color.FromHex("673AB7"),
+                //TextColor = Color.FromHex("EDE7F6"),
+                BackgroundColor = Color.FromHex("FFFFFF"),
                 BorderRadius = 2,
                 BorderWidth = 2,
                 BorderColor = Color.FromHex("4527A0"),
@@ -44,14 +44,14 @@ namespace wellnet.Views.FamilyViews
 
 
             var imgBtnDorisVitals = new FileImageSource();
-            imgBtnDorisVitals.File = "VitalsButton.jpg";
+            imgBtnDorisVitals.File = "btnVitals.png";
 
             var BtnDorisVitals = new Button()
             {               
                //Text = "Doris Vitals",
                //TextColor = Color.FromHex("FFEBEE"),
                 Image = imgBtnDorisVitals,
-                BackgroundColor = Color.FromHex("F44336"),
+                BackgroundColor = Color.FromHex("FFFFFF"),
                 BorderRadius = 2,
                 BorderWidth = 2,
                 BorderColor = Color.FromHex("C62828"),
@@ -61,14 +61,14 @@ namespace wellnet.Views.FamilyViews
             BtnDorisVitals.SetBinding(Button.CommandProperty, "familyvitals");
 
             var imgBtnDorisAgenda = new FileImageSource();
-            imgBtnDorisAgenda.File = "AgendaButton.jpg";
+            imgBtnDorisAgenda.File = "btnAgenda.png";
 
             var BtnDorisAgenda = new Button()
             {
                // Text = "Doris Agenda",
                 //TextColor = Color.FromHex("F5E9E8"),
                 Image = imgBtnDorisAgenda,
-                BackgroundColor = Color.FromHex("4CAF50"),
+                BackgroundColor = Color.FromHex("FFFFFF"),
                 BorderRadius = 2,
                 BorderWidth = 2,
                 BorderColor = Color.FromHex("2E7D32"),
@@ -79,14 +79,14 @@ namespace wellnet.Views.FamilyViews
 
 
             var imgBtnMessages = new FileImageSource();
-            imgBtnMessages.File = "MessagesButton.jpg";
+            imgBtnMessages.File = "btnMessages.png";
 
             var BtnDorisMessages = new Button()
             {
                 //Text = "Family Messages",
                 //TextColor = Color.FromHex("E3F2FD"),
                 Image = imgBtnMessages,
-                BackgroundColor = Color.FromHex("2196F3"),
+                //BackgroundColor = Color.FromHex("2196F3"),
                 BorderRadius = 2,
                 BorderWidth = 2,
                 BorderColor = Color.FromHex("1565C0"),

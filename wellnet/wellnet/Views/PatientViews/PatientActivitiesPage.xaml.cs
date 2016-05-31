@@ -12,6 +12,7 @@ namespace wellnet.Views.PatientViews
     {
         public PatientActivities()
         {
+
             //InitializeComponent();
 
 
@@ -24,13 +25,12 @@ namespace wellnet.Views.PatientViews
             };
             var ActivitiesStatusPic = new Image { Aspect = Aspect.AspectFit };
             {
-                ActivitiesStatusPic.Source = ImageSource.FromFile("SmallActivities.jpg");
+                ActivitiesStatusPic.Source = ImageSource.FromFile("HeartRate.jpg");
             };
 
             var BackgroundGrid = new Image();
 
             /*-----stacklayouts---*/
-            /*  stack for calendar  */
             var Activities_Status = new StackLayout()
             {
                 Spacing = 0,
@@ -43,19 +43,15 @@ namespace wellnet.Views.PatientViews
                 VerticalOptions = LayoutOptions.Start,   //.FillAndExpand,
                 RowDefinitions ={
                     new RowDefinition{Height=530},
-                    //new RowDefinition{Height= new GridLength(1, GridUnitType.Star)},
                     },
                 ColumnDefinitions ={
                     new ColumnDefinition{ Width=360},
-                    //new ColumnDefinition{ Width= new GridLength(1, GridUnitType.Star)},
                 }
             };
 
-            /*fill blood presure stack */
-            ActivitiesGrid.Children.Add(ActivitiesStatusPic);
+            /*fill stack */
+//            ActivitiesGrid.Children.Add(ActivitiesStatusPic);
 
-            /*grid style*/
-            //this.Padding = new Thickness(30, 30, 10, 10);
             this.Content = ActivitiesGrid;
         }
     }

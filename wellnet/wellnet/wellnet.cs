@@ -30,12 +30,11 @@ namespace wellnet
 			var nav = new NavigationService();
 			nav.Configure(Locator.MenuPage, typeof(StartupMenu));
 			nav.Configure(MediLoc.ptlistPage, typeof(PatientListPage));
+
             nav.Configure(PatientLoc.patientMoodPage, typeof(PatientMoodPage));
             nav.Configure(PatientLoc.patientMedicationPage, typeof(PatientMedicationPage));
             nav.Configure(PatientLoc.patientActivitiesPage, typeof(PatientActivitiesPage));
             nav.Configure(PatientLoc.patientMoodsPage, typeof(PatientMoodsPage));
-
-
 
             nav.Configure(FamilyLoc.familyPage, typeof(FamilyPage));
             nav.Configure(FamilyLoc.familyMedication, typeof(FamilyMedication));
