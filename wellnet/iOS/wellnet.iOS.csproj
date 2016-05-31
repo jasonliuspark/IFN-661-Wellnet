@@ -139,14 +139,22 @@
     <BundleResource Include="Resources\VitalsButton.jpg" />
     <BundleResource Include="Resources\VitalsButton.png" />
     <BundleResource Include="Resources\_MedicationButton.jpg" />
+    <BundleResource Include="Resources\WellNetLogo.png" />
+    <BundleResource Include="Resources\btnPatientActivities.jpg" />
+    <BundleResource Include="Resources\btnAgenda.png" />
+    <BundleResource Include="Resources\btnPatientMood.jpg" />
+    <BundleResource Include="Resources\btnMessages.png" />
+    <BundleResource Include="Resources\btnVitals.png" />
+    <BundleResource Include="Resources\btnMedication.png" />
+    <BundleResource Include="Resources\Doris_Morrison.png" />
+    <BundleResource Include="Resources\Jean_Paul.png" />
+    <BundleResource Include="Resources\Bird_Johnson.png" />
+    <BundleResource Include="Resources\Pete_Dray.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\doctor_nurse.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\family.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\resident.png" />
   </ItemGroup>
 </Project>

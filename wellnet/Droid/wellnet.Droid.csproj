@@ -92,6 +92,11 @@
     <AndroidResource Include="Resources\drawable\Doris_location.jpg" />
     <AndroidResource Include="Resources\drawable\John_location.jpg" />
     <AndroidResource Include="Resources\drawable\John_ecg.gif" />
+    <AndroidResource Include="Resources\drawable\WellNetLogo.png" />
+    <AndroidResource Include="Resources\drawable\Jean_Paul.png" />
+    <AndroidResource Include="Resources\drawable\Bird_Johnson.png" />
+    <AndroidResource Include="Resources\drawable\Doris_Morrison.png" />
+    <AndroidResource Include="Resources\drawable\Pete_Dray.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Agenda.jpg" />

@@ -37,6 +37,7 @@ namespace wellnet
 		public string PastDisease { get; set;}
 		//Patient Mood
 		public string PtMood { get; set; }
+		public string PtImage { get; set; }
 	}
 }
 

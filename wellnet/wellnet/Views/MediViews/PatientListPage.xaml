@@ -5,6 +5,11 @@ Title="Patient List">
     <DataTemplate> 
      <ViewCell>
      <StackLayout Orientation="Horizontal" Padding="10">
+
+     	<StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+<!--Patient Image-->
+		<Image x:Name="PatientImage" Source="{Binding PtImage}" WidthRequest="60" HeightRequest="60"></Image>
+     	</StackLayout>
      	<StackLayout Orientation="Vertical">
 <!--Firstname and lastname-->
 	      <StackLayout x:Name="nameStack" Orientation="Horizontal">

@@ -6,6 +6,9 @@ Title="Patient Detail"
 >
 <ScrollView Padding="20">
 <StackLayout>
+	<StackLayout>
+	<Image x:Name="PatientImageLarge" Source="{Binding PtImage}"></Image>
+	</StackLayout>
 <!--firstname and lastname-->
 	<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
