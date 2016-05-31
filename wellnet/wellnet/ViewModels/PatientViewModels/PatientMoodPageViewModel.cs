@@ -25,7 +25,7 @@ namespace wellnet.ViewModels.PatientViewModels
 
             patientMedication = new RelayCommand(() => _nav.NavigateTo(PatientLoc.patientMedicationPage));
             patientActivities = new RelayCommand(() => _nav.NavigateTo(PatientLoc.patientActivitiesPage));
-            patientMoods = new RelayCommand(() => _nav.NavigateTo(PatientLoc.patientMoodsPage));
+            patientMoodMeter = new RelayCommand(() => _nav.NavigateTo(PatientLoc.patientMoodMeterPage));
 
     //        imagetap = new TapGestureRecognizer {
 				//Command = new Command (() => 
@@ -54,7 +54,7 @@ namespace wellnet.ViewModels.PatientViewModels
             set;
         }
 
-        public ICommand patientMoods
+        public ICommand patientMoodMeter
         {
             get;
             set;

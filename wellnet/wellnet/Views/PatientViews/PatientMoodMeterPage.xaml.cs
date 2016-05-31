@@ -8,27 +8,27 @@ using Xamarin.Forms;
 
 namespace wellnet.Views.PatientViews
 {
-    public partial class PatientActivities : ContentPage
+    public partial class PatientMoodMeterPage : ContentPage
     {
-        public PatientActivities()
+        public PatientMoodMeterPage()
         {
-
             /* Draw Status Block */
             var MessageText = new Label()
             {
-                Text = "Hello Dorris. You have an appointment with Dr. Doe at 3pm.",
+                Text = "Hello Wayne. Dorris is feeling HAPPY today. She has an appointment with Dr. Doe at 3pm.",
                 TextColor = Color.White,
                 BackgroundColor = Color.FromHex("2196F3"),
+
+                // BorderColor = Color.FromHex("4527A0"),
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label))
             };
 
-            var ActivitiesStatusPic = new Image { Aspect = Aspect.AspectFit };
+            var imgMoodMeter = new Image { Aspect = Aspect.AspectFit };
             {
-                ActivitiesStatusPic.Source = ImageSource.FromFile("PatientActivities.png");
+                imgMoodMeter.Source = ImageSource.FromFile("PatientMoods.png");
             };
 
-            ///* draw button stack */
-            var DorisMenuStack = new StackLayout()
+            var MoodMeter = new StackLayout()
             {
                 Spacing = 10,
                 Padding = 10,
@@ -36,13 +36,9 @@ namespace wellnet.Views.PatientViews
             };
 
             /* fill the stack with buttons*/
-           // DorisMenuStack.Children.Add(MessageText);
-            DorisMenuStack.Children.Add(ActivitiesStatusPic);
-            //DorisMenuStack.Children.Add(MessageText);
+            MoodMeter.Children.Add(imgMoodMeter);
 
-            /* fill the content page*/
-            this.Content = DorisMenuStack;
+            this.Content = MoodMeter;
         }
     }
-
 }

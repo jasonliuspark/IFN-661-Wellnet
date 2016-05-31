@@ -51,12 +51,12 @@ namespace wellnet
 
             BtnPatientActivities.SetBinding(Button.CommandProperty, "patientActivities");
             
-            var imgBtnPatientMoods = new FileImageSource();
-            imgBtnPatientMoods.File = "btnPatientMood.jpg";
+            var imgBtnPatientMoodMeter = new FileImageSource();
+            imgBtnPatientMoodMeter.File = "btnPatientMood.jpg";
 
-            var BtnPatientMoods = new Button()
+            var BtnPatientMoodMeter = new Button()
             {
-                Image = imgBtnPatientMoods,
+                Image = imgBtnPatientMoodMeter,
                 BackgroundColor = Color.FromHex("4CAF50"),
                 BorderRadius = 2,
                 BorderWidth = 2,
@@ -64,7 +64,7 @@ namespace wellnet
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
             };
 
-            BtnPatientMoods.SetBinding(Button.CommandProperty, "patientMoods");
+            BtnPatientMoodMeter.SetBinding(Button.CommandProperty, "patientMoodMeter");
 
             ///* draw button stack */
             var DorisMenuStack = new StackLayout()
@@ -78,7 +78,7 @@ namespace wellnet
             DorisMenuStack.Children.Add(MessageText);
             DorisMenuStack.Children.Add(BtnPatientMedication);
             DorisMenuStack.Children.Add(BtnPatientActivities);
-            DorisMenuStack.Children.Add(BtnPatientMoods);
+            DorisMenuStack.Children.Add(BtnPatientMoodMeter);
 
             /* fill the content page*/
             this.Content = DorisMenuStack;

@@ -33,8 +33,8 @@ namespace wellnet
 
             nav.Configure(PatientLoc.patientMoodPage, typeof(PatientMoodPage));
             nav.Configure(PatientLoc.patientMedicationPage, typeof(PatientMedicationPage));
-            nav.Configure(PatientLoc.patientActivitiesPage, typeof(PatientActivitiesPage));
-            nav.Configure(PatientLoc.patientMoodsPage, typeof(PatientMoodsPage));
+            nav.Configure(PatientLoc.patientActivitiesPage, typeof(PatientActivities));
+            nav.Configure(PatientLoc.patientMoodMeterPage, typeof(PatientMoodMeterPage));
 
             nav.Configure(FamilyLoc.familyPage, typeof(FamilyPage));
             nav.Configure(FamilyLoc.familyMedication, typeof(FamilyMedication));

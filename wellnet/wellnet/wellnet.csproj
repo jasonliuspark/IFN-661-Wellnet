@@ -39,8 +39,8 @@
     <Compile Include="ViewModels\FamilyViewModels\FamilyVitalsPageViewModel.cs" />
     <Compile Include="ViewModels\PatientViewModels\PatientActivitiesPageViewModel.cs" />
     <Compile Include="ViewModels\PatientViewModels\PatientMedicationPageViewModel.cs" />
+    <Compile Include="ViewModels\PatientViewModels\PatientMoodMeterPageViewModel.cs" />
     <Compile Include="ViewModels\PatientViewModels\PatientMoodPageViewModel.cs" />
-    <Compile Include="ViewModels\PatientViewModels\PatientMoodsPageViewModel.cs" />
     <Compile Include="Views\FamilyViews\FamilyAgendaPage.xaml.cs">
       <DependentUpon>FamilyAgendaPage.xaml</DependentUpon>
     </Compile>
@@ -62,11 +62,11 @@
     <Compile Include="Views\PatientViews\PatientMedicationPage.xaml.cs">
       <DependentUpon>PatientMedicationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PatientViews\PatientMoodMeterPage.xaml.cs">
+      <DependentUpon>PatientMoodMeterPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PatientViews\PatientMoodPage.xaml.cs">
       <DependentUpon>PatientMoodPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PatientViews\PatientMoodsPage.xaml.cs">
-      <DependentUpon>PatientMoodsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="wellnet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -198,13 +198,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\PatientViews\PatientMoodsPage.xaml">
+    <EmbeddedResource Include="Views\PatientViews\PatientMedicationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\PatientViews\PatientMedicationPage.xaml">
+    <EmbeddedResource Include="Views\PatientViews\PatientMoodMeterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

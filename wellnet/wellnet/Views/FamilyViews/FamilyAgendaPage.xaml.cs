@@ -20,7 +20,7 @@ namespace wellnet.Views.FamilyViews
                 TextColor = Color.FromHex("#4CAF50"),
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
             };
-            var AgendaStatusPic = new Image { Aspect = Aspect.AspectFit };
+             var AgendaStatusPic = new Image { Aspect = Aspect.AspectFit };
             {
                 AgendaStatusPic.Source = ImageSource.FromFile("SmallAgenda.jpg");
             };
