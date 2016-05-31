@@ -138,7 +138,10 @@ namespace wellnet.Droid
 			public const int VitalsButton = 2130837534;
 			
 			// aapt resource value: 0x7f02001f
-			public const int WellNetLogo = 2130837535;
+			public const int wellnet_logo_mini = 2130837535;
+			
+			// aapt resource value: 0x7f020020
+			public const int WellNetLogo = 2130837536;
 			
 			static Drawable()
 			{

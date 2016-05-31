@@ -13,6 +13,7 @@ namespace wellnet.Views.FamilyViews
         public FamilyMedication()
         {
             InitializeComponent();
+			NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
             BindingContext = App.FamilyLoc.FamilyMedication1;
 
         }

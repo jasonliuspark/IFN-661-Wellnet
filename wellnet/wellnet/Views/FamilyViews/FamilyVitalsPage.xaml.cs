@@ -12,6 +12,7 @@ namespace wellnet.Views.FamilyViews
     {
         public FamilyVitalsPage()
         {
+			NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
             InitializeComponent();
             /* blood presure items */
             var BloodPressureStatus = new Label()

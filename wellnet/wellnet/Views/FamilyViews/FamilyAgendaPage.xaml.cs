@@ -14,6 +14,7 @@ namespace wellnet.Views.FamilyViews
         {
             InitializeComponent();
             /* Agenda */
+			NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
             var AgendaStatus = new Label()
             {
                 Text = "Agenda" ,

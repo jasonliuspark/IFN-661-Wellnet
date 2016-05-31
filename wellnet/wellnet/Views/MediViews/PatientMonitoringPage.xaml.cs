@@ -9,6 +9,7 @@ namespace wellnet
 	{
 		public PatientMonitoringPage (PatientDetails currentPatientDetail)
 		{
+			NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
 			/* blood presure items */
 //			var BloodPresureStatus = new Label () {Text = "BloodPresure",
 //				TextColor = Color.Red,
