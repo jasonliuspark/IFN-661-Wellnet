@@ -45,61 +45,64 @@ namespace wellnet.Droid
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int _MedicationButton = 2130837504;
+			public const int Agenda = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int Agenda = 2130837505;
+			public const int AgendaButton = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int AgendaButton = 2130837506;
+			public const int BodyTemp = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int BodyTemp = 2130837507;
+			public const int btnPatientActivities = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int Doris_location = 2130837508;
+			public const int btnPatientMood = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int DorisActivities = 2130837509;
+			public const int Doris_location = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int DorisMood = 2130837510;
+			public const int Exercise = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int Exercise = 2130837511;
+			public const int Exertion = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int Exertion = 2130837512;
+			public const int HeartRate = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int HeartRate = 2130837513;
+			public const int icon = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int icon = 2130837514;
+			public const int John_ecg = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int John_ecg = 2130837515;
+			public const int John_location = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int John_location = 2130837516;
+			public const int MedicationButton = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int MedicationButton = 2130837517;
+			public const int Messages = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int Messages = 2130837518;
+			public const int MessagesButton = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int MessagesButton = 2130837519;
+			public const int PatientActivities = 2130837519;
 			
 			// aapt resource value: 0x7f020010
-			public const int SmallAgenda = 2130837520;
+			public const int PatientMood = 2130837520;
 			
 			// aapt resource value: 0x7f020011
-			public const int StepMonitor = 2130837521;
+			public const int SmallAgenda = 2130837521;
 			
 			// aapt resource value: 0x7f020012
-			public const int VitalsButton = 2130837522;
+			public const int StepMonitor = 2130837522;
+			
+			// aapt resource value: 0x7f020013
+			public const int VitalsButton = 2130837523;
 			
 			static Drawable()
 			{

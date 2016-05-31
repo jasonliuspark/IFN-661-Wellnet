@@ -8,37 +8,35 @@ using Xamarin.Forms;
 
 namespace wellnet.Views.PatientViews
 {
-    public partial class PatientActivities : ContentPage
+    public partial class PatientMoodsPage : ContentPage
     {
-        public PatientActivities()
+        public void PatientMoods()
         {
-            //InitializeComponent();
-
-
-            /* Activities */
-            var ActivitiesStatus = new Label()
+            InitializeComponent();
+            /* Moods */
+            var MoodsStatus = new Label()
             {
-                Text = "Activities",
+                Text = "Moods",
                 TextColor = Color.FromHex("#4CAF50"),
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
             };
-            var ActivitiesStatusPic = new Image { Aspect = Aspect.AspectFit };
+            var MoodsStatusPic = new Image { Aspect = Aspect.AspectFit };
             {
-                ActivitiesStatusPic.Source = ImageSource.FromFile("SmallActivities.jpg");
+                MoodsStatusPic.Source = ImageSource.FromFile("SmallMoods.jpg");
             };
 
             var BackgroundGrid = new Image();
 
             /*-----stacklayouts---*/
             /*  stack for calendar  */
-            var Activities_Status = new StackLayout()
+            var Moods_Status = new StackLayout()
             {
                 Spacing = 0,
                 VerticalOptions = LayoutOptions.Fill,
             };
 
             /*monitoring grids layout */
-            var ActivitiesGrid = new Grid
+            var MoodsGrid = new Grid
             {
                 VerticalOptions = LayoutOptions.Start,   //.FillAndExpand,
                 RowDefinitions ={
@@ -52,12 +50,12 @@ namespace wellnet.Views.PatientViews
             };
 
             /*fill blood presure stack */
-            ActivitiesGrid.Children.Add(ActivitiesStatusPic);
+            MoodsGrid.Children.Add(MoodsStatusPic);
 
             /*grid style*/
             //this.Padding = new Thickness(30, 30, 10, 10);
-            this.Content = ActivitiesGrid;
+            this.Content = MoodsGrid;
         }
-    }
 
+    }
 }

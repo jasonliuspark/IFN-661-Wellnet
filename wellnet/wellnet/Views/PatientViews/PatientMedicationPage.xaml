@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="wellnet.Views.PatientViews.PatientMedicationPage"
+             Title="Medication List" BackgroundColor="Blue">
+
+  <ListView x:Name="MedicationList" RowHeight="70" ItemsSource="{Binding PtDetails}">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout Orientation="Horizontal" Padding="10">
+            <StackLayout Orientation="Vertical">
+              <!--Medication-->
+              <StackLayout x:Name="nameStack" Orientation="Horizontal">
+                <Label x:Name="Medication" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+                FontSize="22" TextColor="White" Text="{Binding DrugName}"/>
+                <Label x:Name="Dosage" FontFamily="HelveticaNeue-small" FontAttributes="Bold"
+                FontSize="22" TextColor="White" Text="{Binding Dosage}"/>
+                <Label x:Name="Dose Time" FontFamily="HelveticaNeue-small" FontAttributes="Bold"
+                FontSize="22" TextColor="White" Text="{Binding DosingTime}"/>
+              </StackLayout>
+              <!--Vertical stack wrap-->
+            </StackLayout>
+
+            <!--the Outsidest-->
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</ContentPage>

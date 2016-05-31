@@ -16,26 +16,26 @@ namespace wellnet.ViewModels.PatientViewModels
 {
     public class PatientMoodPageViewModel:ViewModelBase
     {
-        // private enumerated value for mood
-
-        // random message to show patient from list of random messages
-
 
         private INavigationService _nav;
         public PatientMoodPageViewModel(INavigationService nav )
         {
             var db = new DBInit();
             _nav = nav;
-            patientActivitiesButtonCommand = new RelayCommand(() => _nav.NavigateTo(PatientLoc.ptActivitiesPage));
-			imagetap= new TapGestureRecognizer {
-				Command = new Command (() => 
-					_nav.NavigateTo(PatientLoc.ptActivitiesPage)
-				),
-				NumberOfTapsRequired = 1
-				};
+
+            patientMedication = new RelayCommand(() => _nav.NavigateTo(PatientLoc.patientMedicationPage));
+            patientActivities = new RelayCommand(() => _nav.NavigateTo(PatientLoc.patientActivitiesPage));
+            patientMoods = new RelayCommand(() => _nav.NavigateTo(PatientLoc.patientMoodsPage));
+
+    //        imagetap = new TapGestureRecognizer {
+				//Command = new Command (() => 
+				//	_nav.NavigateTo(PatientLoc.patientActivitiesPage)
+				//),
+				//NumberOfTapsRequired = 1
+				//};
         }
 
-        public ICommand patientActivitiesButtonCommand
+        public ICommand patientActivities
         {
             get;
             set;
@@ -48,6 +48,18 @@ namespace wellnet.ViewModels.PatientViewModels
 
 
 
+        public ICommand patientMedication
+        {
+            get;
+            set;
+        }
+
+        public ICommand patientMoods
+        {
+            get;
+            set;
+        }
+        
         // getter and setter for mood value
 
 

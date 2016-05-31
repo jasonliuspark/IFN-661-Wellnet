@@ -19,8 +19,8 @@ namespace wellnet
         private static PatientLoc _patientLoc;
         public static PatientLoc PatientLoc { get { return _patientLoc ?? ( _patientLoc = new PatientLoc()); } }
 
-        private static FamilyLoc _famiyLoc;
-        public static FamilyLoc FamilyLoc { get { return _famiyLoc ?? (_famiyLoc = new FamilyLoc()); } }
+        private static FamilyLoc _familyLoc;
+        public static FamilyLoc FamilyLoc { get { return _familyLoc ?? (_familyLoc = new FamilyLoc()); } }
 		public App ()
 		{
 			// The root page of your application
@@ -30,8 +30,13 @@ namespace wellnet
 			var nav = new NavigationService();
 			nav.Configure(Locator.MenuPage, typeof(StartupMenu));
 			nav.Configure(MediLoc.ptlistPage, typeof(PatientListPage));
-            nav.Configure(PatientLoc.ptMoodPage, typeof(PatientMoodPage));
-            nav.Configure(PatientLoc.ptActivitiesPage, typeof(PatientActivitiesPage));
+            nav.Configure(PatientLoc.patientMoodPage, typeof(PatientMoodPage));
+            nav.Configure(PatientLoc.patientMedicationPage, typeof(PatientMedicationPage));
+            nav.Configure(PatientLoc.patientActivitiesPage, typeof(PatientActivitiesPage));
+            nav.Configure(PatientLoc.patientMoodsPage, typeof(PatientMoodsPage));
+
+
+
             nav.Configure(FamilyLoc.familyPage, typeof(FamilyPage));
             nav.Configure(FamilyLoc.familyMedication, typeof(FamilyMedication));
             nav.Configure(FamilyLoc.familyVitalsPage, typeof(FamilyVitalsPage));
