@@ -11,7 +11,7 @@ namespace wellnet
 		//public PaitentListPage(DBInit database)
 		public PatientListPage( )
 		{	
-			
+			NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
 			//_db = database;
 			//Title = "Patient List";
 

@@ -54,8 +54,10 @@ namespace wellnet
 ////			familiyViewBtn.Clicked += onFamilyButtonClicked ;
 //
 //	        /* fill the content page*/
+			//NavigationPage.SetTitleIcon(this,"WellNetLogo.png");
 			InitializeComponent();
 			BindingContext = App.Locator.startmenu;
+			NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
 //            patient.SetBinding(TapGestureRecognizer.CommandProperty, "patientButtonCommand");
 //            patient.SetBinding(TapGestureRecognizer.NumberOfTapsRequiredProperty, "1");
 //

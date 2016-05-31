@@ -12,6 +12,7 @@ namespace wellnet.Views.PatientViews
     {
         public PatientMoodMeterPage()
         {
+			NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
             /* Draw Status Block */
             var MessageText = new Label()
             {

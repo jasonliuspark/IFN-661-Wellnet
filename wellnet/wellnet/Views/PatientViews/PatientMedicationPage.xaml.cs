@@ -12,8 +12,10 @@ namespace wellnet.Views.PatientViews
     {
         public PatientMedicationPage()
         {
+			NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
             InitializeComponent();
             BindingContext = App.PatientLoc.PatientMedication;
+
         }
     }
 }

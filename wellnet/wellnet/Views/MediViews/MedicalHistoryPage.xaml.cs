@@ -9,6 +9,7 @@ namespace wellnet
 	{
 		public MedicalHistoryPage ()
 		{
+			NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
 			InitializeComponent ();
 		}
 	}

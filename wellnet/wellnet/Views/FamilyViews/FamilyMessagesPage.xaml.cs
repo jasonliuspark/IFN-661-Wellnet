@@ -12,6 +12,7 @@ namespace wellnet.Views.FamilyViews
         public FamilyMessagesPage()
         {
             InitializeComponent();
+			NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
             /* Agenda */
             var MessagesStatus = new Label()
             {

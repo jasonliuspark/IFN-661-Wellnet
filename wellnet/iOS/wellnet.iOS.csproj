@@ -150,6 +150,7 @@
     <BundleResource Include="Resources\Jean_Paul.png" />
     <BundleResource Include="Resources\Bird_Johnson.png" />
     <BundleResource Include="Resources\Pete_Dray.png" />
+    <BundleResource Include="Resources\wellnet_logo_mini.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\doctor_nurse.png" />
