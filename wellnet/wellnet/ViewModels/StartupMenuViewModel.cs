@@ -17,6 +17,7 @@ namespace wellnet
 	{
 		private INavigationService _nav;
 
+		Page _page;
 		public StartupMenuViewModel (INavigationService nav)
 		{
 			_nav = nav;

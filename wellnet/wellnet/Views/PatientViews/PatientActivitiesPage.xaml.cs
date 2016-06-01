@@ -12,7 +12,7 @@ namespace wellnet.Views.PatientViews
     {
         public PatientActivities()
         {
-			NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
+			//NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
             /* Draw Status Block */
             var MessageText = new Label()
             {
@@ -42,6 +42,7 @@ namespace wellnet.Views.PatientViews
 
             /* fill the content page*/
             this.Content = DorisMenuStack;
+			BindingContext = App.PatientLoc.PatientActivities;
         }
     }
 

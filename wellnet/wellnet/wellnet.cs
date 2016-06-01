@@ -5,7 +5,7 @@ using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 using wellnet.Views.FamilyViews;
 using wellnet.Views.PatientViews;
-
+using System.Diagnostics;
 namespace wellnet
 {
 	public class App : Application
@@ -47,7 +47,7 @@ namespace wellnet
 			var firstPage = new NavigationPage(new StartupMenu());
 
 			nav.Initialize(firstPage);
-
+			//Debug.WriteLine ("Debug string split: "  );
 			//SimpleIoc.Default.Register<INavigationService>(() => nav);
 
 			MainPage = firstPage;

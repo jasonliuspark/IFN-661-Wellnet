@@ -47,8 +47,8 @@ namespace wellnet
 
             //SQLiteConnection db = DependencyService.Get<ISQLite> ().GetConnection ();
 
-            if (db.Table<PatientDetails>().Count() != 0)
-            {
+            //if (db.Table<PatientDetails>().Count() != 0)
+            //{
                 db.DropTable<PatientDetails>();
                 db.CreateTable<PatientDetails>();
                 var NewPtDetails = new PatientDetails();
@@ -83,7 +83,7 @@ namespace wellnet
                 NewPtDetails.DoctorNotes = "currently in good health";
                 NewPtDetails.PastDisease = "athsma";
                 NewPtDetails.PtMood = "Stable";
-
+			NewPtDetails.PatientActivities="11:00AM Physio Appointment, 2:00PM Tea Party with Beth, 5:00PM Medication ";
                 db.Insert(NewPtDetails);
 
                 var NewPtDetails2 = new PatientDetails();
@@ -191,7 +191,7 @@ namespace wellnet
 				//testing, patient mood
 				NewPtDetails4.PtMood = "Happy";
 				db.Insert(NewPtDetails4);
-            }
+         //   }
         }
 		public void PatientDrugHistoryInit(SQLiteConnection db)
 		{

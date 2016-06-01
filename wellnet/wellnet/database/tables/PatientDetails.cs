@@ -17,6 +17,7 @@ namespace wellnet
 		public string Address {get;set;}
 		public string MedicareNum { get; set;}
 		public string MedicareExpiry { get; set;}
+		public string PatientActivities { get; set;}
 		//Monitoring status table
 		public int HeartRate { get; set;}
 		public double Temp { get; set;}

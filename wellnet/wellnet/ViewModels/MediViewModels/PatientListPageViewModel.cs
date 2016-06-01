@@ -29,7 +29,7 @@ namespace wellnet
 				Debug.WriteLine (s + "is printed out");
 
 			}
-
+			Debug.WriteLine ("Debug string split: "  );
 		}
 		public IEnumerable<PatientDetails> PtDetails {
 

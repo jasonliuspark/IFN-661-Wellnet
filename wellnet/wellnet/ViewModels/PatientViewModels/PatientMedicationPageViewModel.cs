@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Diagnostics;
 namespace wellnet.ViewModels.PatientViewModels
 {
     public class PatientMedicationPageViewModel : ViewModelBase
@@ -16,6 +16,7 @@ namespace wellnet.ViewModels.PatientViewModels
         {
             var db = new DBInit();
             ptdetails = db.GetDetails();
+			Debug.WriteLine ("Debug string split: "  );
         }
 
 

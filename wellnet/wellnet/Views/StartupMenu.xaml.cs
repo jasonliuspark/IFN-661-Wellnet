@@ -58,6 +58,8 @@ namespace wellnet
 			InitializeComponent();
 			BindingContext = App.Locator.startmenu;
 			NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
+
+
 //            patient.SetBinding(TapGestureRecognizer.CommandProperty, "patientButtonCommand");
 //            patient.SetBinding(TapGestureRecognizer.NumberOfTapsRequiredProperty, "1");
 //
