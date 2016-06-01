@@ -42,8 +42,7 @@ namespace wellnet.Views.FamilyViews
             };
             
             BtnDorisMedication.SetBinding(Button.CommandProperty, "familymedication");
-
-
+            
             var imgBtnDorisVitals = new FileImageSource();
             imgBtnDorisVitals.File = "btnVitals.png";
 
