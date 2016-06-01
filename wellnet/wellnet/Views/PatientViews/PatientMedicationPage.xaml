@@ -13,11 +13,11 @@
               <!--Medication-->
               <StackLayout x:Name="nameStack" Orientation="Horizontal">
                 <Label x:Name="Medication" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-                FontSize="22" TextColor="White" Text="{Binding DrugName}"/>
+                FontSize="22" Text="{Binding DrugName}"/>
                 <Label x:Name="Dosage" FontFamily="HelveticaNeue-small" FontAttributes="Bold"
-                FontSize="22" TextColor="White" Text="{Binding Dosage}"/>
+                FontSize="22" Text="{Binding Dosage}"/>
                 <Label x:Name="Dose Time" FontFamily="HelveticaNeue-small" FontAttributes="Bold"
-                FontSize="22" TextColor="White" Text="{Binding DosingTime}"/>
+                FontSize="22" Text="{Binding DosingTime}"/>
               </StackLayout>
               <!--Vertical stack wrap-->
             </StackLayout>

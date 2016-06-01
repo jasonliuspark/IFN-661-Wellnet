@@ -35,15 +35,14 @@ namespace wellnet.Views.FamilyViews
                 Image = imgBtnDorisMedication,
                 //TextColor = Color.FromHex("EDE7F6"),
                 BackgroundColor = Color.FromHex("FFFFFF"),
-                BorderRadius = 2,
-                BorderWidth = 2,
+                //BorderRadius = 2,
+                //BorderWidth = 2,
                 BorderColor = Color.FromHex("4527A0"),
                 FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Button))
             };
             
             BtnDorisMedication.SetBinding(Button.CommandProperty, "familymedication");
-
-
+            
             var imgBtnDorisVitals = new FileImageSource();
             imgBtnDorisVitals.File = "btnVitals.png";
 
@@ -53,8 +52,8 @@ namespace wellnet.Views.FamilyViews
                //TextColor = Color.FromHex("FFEBEE"),
                 Image = imgBtnDorisVitals,
                 BackgroundColor = Color.FromHex("FFFFFF"),
-                BorderRadius = 2,
-                BorderWidth = 2,
+                //BorderRadius = 2,
+                //BorderWidth = 2,
                 BorderColor = Color.FromHex("C62828"),
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
             };
@@ -70,8 +69,8 @@ namespace wellnet.Views.FamilyViews
                 //TextColor = Color.FromHex("F5E9E8"),
                 Image = imgBtnDorisAgenda,
                 BackgroundColor = Color.FromHex("FFFFFF"),
-                BorderRadius = 2,
-                BorderWidth = 2,
+                //BorderRadius = 2,
+                //BorderWidth = 2,
                 BorderColor = Color.FromHex("2E7D32"),
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
             };
@@ -88,8 +87,8 @@ namespace wellnet.Views.FamilyViews
                 //TextColor = Color.FromHex("E3F2FD"),
                 Image = imgBtnMessages,
                 //BackgroundColor = Color.FromHex("2196F3"),
-                BorderRadius = 2,
-                BorderWidth = 2,
+                //BorderRadius = 2,
+                //BorderWidth = 2,
                 BorderColor = Color.FromHex("1565C0"),
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))                
             };
@@ -98,9 +97,10 @@ namespace wellnet.Views.FamilyViews
             /* draw button stack */
             var DorisMenuStack = new StackLayout()
             {
-                Spacing = 10,
-                Padding = 10,
-                VerticalOptions = LayoutOptions.FillAndExpand,
+                //Spacing = 10,
+                //Padding = 10,
+                VerticalOptions = LayoutOptions.Fill,
+                HorizontalOptions = LayoutOptions.Center
             };
 
             /* fill the stack with buttons*/
