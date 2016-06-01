@@ -12,8 +12,8 @@ namespace wellnet.Views.PatientViews
     {
         public PatientActivities()
         {
-			//NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
-            /* Draw Status Block */
+			NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
+            /* Draw Status Block 
             var MessageText = new Label()
             {
                 Text = "Hello Dorris. You have an appointment with Dr. Doe at 3pm.",
@@ -27,7 +27,7 @@ namespace wellnet.Views.PatientViews
                 ActivitiesStatusPic.Source = ImageSource.FromFile("PatientActivities.png");
             };
 
-            ///* draw button stack */
+            ///* draw button stack 
             var DorisMenuStack = new StackLayout()
             {
                 Spacing = 10,
@@ -35,13 +35,22 @@ namespace wellnet.Views.PatientViews
                 VerticalOptions = LayoutOptions.FillAndExpand,
             };
 
-            /* fill the stack with buttons*/
+            /* fill the stack with buttons
            // DorisMenuStack.Children.Add(MessageText);
             DorisMenuStack.Children.Add(ActivitiesStatusPic);
             //DorisMenuStack.Children.Add(MessageText);
+            
+            /* fill the content page
+            this.Content = DorisMenuStack;*/
+            /*
+            ListView patientActivities = new ListView();
+            patientActivities.ItemsSource = new string[] {
+                "9:00AM Physio appointment",
+                "12:00AM Lunch with Beth",
+                "5:00PM Take Medication"
+            };*/
 
-            /* fill the content page*/
-            this.Content = DorisMenuStack;
+            //InitializeComponent();
 			BindingContext = App.PatientLoc.PatientActivities;
         }
     }
