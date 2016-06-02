@@ -10,6 +10,9 @@ namespace wellnet.Views.PatientViews
 {
     public partial class PatientMoodMeterPage : ContentPage
     {
+
+        string buttonClickedText;
+        int clickTotal = 0;
         public PatientMoodMeterPage()
         {
 			NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
@@ -43,6 +46,7 @@ namespace wellnet.Views.PatientViews
             grid.RowDefinitions.Add(new RowDefinition());
             grid.ColumnDefinitions.Add(new ColumnDefinition());
 
+            /* assign mood images to array and assign file discreptors into variables */
             List<string> moodList = new List<string>();
             moodList.Add("Happy.png");
             moodList.Add("Excited.png");
@@ -61,17 +65,83 @@ namespace wellnet.Views.PatientViews
             var sickMoodImage = new Image { Aspect = Aspect.AspectFit };
             sickMoodImage.Source = ImageSource.FromFile("Sick.png");
 
+            /* Add label asking question */
+            Label patientQuestion = new Label
+            {
+                Text = "Button",
+                Font = Font.BoldSystemFontOfSize(50),
+                HorizontalOptions = LayoutOptions.Center
+            };
+
+            Label patientConfirm = new Label
+            {
+                Text = "You have selected: x",
+                Font = Font.SystemFontOfSize(NamedSize.Large),
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+
+
+            /* Add buttons */
+            Button happyButton = new Button
+            {
+                Text = "Happy?",
+                Font = Font.SystemFontOfSize(NamedSize.Large),
+                BorderWidth = 1,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+            happyButton.Clicked += OnButtonClicked;
+
+            Button sadButton = new Button
+            {
+                Text = "Sad?",
+                Font = Font.SystemFontOfSize(NamedSize.Large),
+                BorderWidth = 1,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+            sadButton.Clicked += OnButtonClicked;
+
+            Button excitedButton = new Button
+            {
+                Text = "Excited?",
+                Font = Font.SystemFontOfSize(NamedSize.Large),
+                BorderWidth = 1,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+            sadButton.Clicked += OnButtonClicked;
+
+            Button sickButton = new Button
+            {
+                Text = "Happy?",
+                Font = Font.SystemFontOfSize(NamedSize.Large),
+                BorderWidth = 1,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+            sickButton.Clicked += OnButtonClicked;
+
 
             /* allocate icons to various parts of the grid */
-            grid.Children.Add(happyMoodImage, 0, 0);
-            grid.Children.Add(new Label { Text = "Happy?" }, 1, 0);
-            grid.Children.Add(sadMoodImage, 0, 1);
-            grid.Children.Add(new Label { Text = "Sad?" }, 1, 1);
-            grid.Children.Add(excitedMoodImage, 0, 2);
-            grid.Children.Add(new Label { Text = "Excited?" }, 1, 2);
-            grid.Children.Add(sickMoodImage, 0, 3);
-            grid.Children.Add(new Label { Text = "Sick?" }, 1, 3);
+            grid.Children.Add(patientQuestion, 0, 0);
+            Grid.SetColumnSpan(patientQuestion, 3);
 
+            grid.Children.Add(happyMoodImage, 0, 1);
+            grid.Children.Add(happyButton, 1, 1);
+
+            grid.Children.Add(sadMoodImage, 0, 2);
+            grid.Children.Add(sadButton, 1, 2);
+
+            grid.Children.Add(excitedMoodImage, 0, 3);
+            grid.Children.Add(excitedButton, 1, 3);
+
+            grid.Children.Add(sickMoodImage, 0, 4);
+            grid.Children.Add(sickButton, 1, 4);
+
+            grid.Children.Add(patientConfirm, 0, 5);
+            Grid.SetColumnSpan(patientConfirm, 3);
 
             /* check box */
             Switch checkboxHappy = new Switch
@@ -83,6 +153,13 @@ namespace wellnet.Views.PatientViews
 
 
             this.Content = grid;
+        }
+        // TODO: Do I need to make a separat method for each of the different types of buttons to click? Will do tomorrow with Jason
+        void OnButtonClicked(object sender, EventArgs e)
+        {
+            buttonClickedText += "you have selected a mood";
+            //patientConfirm.Text = String.Format("{0} button click{1}",
+                                       clickTotal, clickTotal == 1 ? "" : "s");
         }
     }
 }
