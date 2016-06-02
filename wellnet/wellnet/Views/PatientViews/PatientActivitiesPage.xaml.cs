@@ -49,9 +49,13 @@ namespace wellnet.Views.PatientViews
                 "12:00AM Lunch with Beth",
                 "5:00PM Take Medication"
             };*/
-
+			/* uncomment this to compile xaml */
             //InitializeComponent();
 			BindingContext = App.PatientLoc.PatientActivities;
+
+			ListView ptactivity = new ListView ();
+			ptactivity.SetBinding (ListView.ItemsSourceProperty,"PatientActivities");
+			this.Content = ptactivity;
         }
     }
 

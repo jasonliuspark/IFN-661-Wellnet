@@ -1,18 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="wellnet.Views.PatientViews.PatientActivitiesPage">
+             x:Class="wellnet.Views.PatientViews.PatientActivities">
              <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+<!--             not compiled -->
   <ListView x:Name="patientActivities" RowHeight="70" ItemSource="{Binding PatientActivities}">
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
-          <StackLayout Orientation="Horizontal" Padding="10">
+<!--          <StackLayout Orientation="Horizontal" Padding="10">
             <StackLayout x:Name="nameStack" Orientation="Horizontal">
               <Label x:Name="activityItem" FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
-	      FontSize="22" TextColor="Black" Text="{Binding patientActivity}"/>
+	      FontSize="22" TextColor="Black" Text="{Binding PatientActivity}"/>
             </StackLayout>
-          </StackLayout>
+          </StackLayout>-->
         </ViewCell>
       </DataTemplate> 
     </ListView.ItemTemplate>
