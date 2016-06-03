@@ -151,6 +151,10 @@
     <BundleResource Include="Resources\Bird_Johnson.png" />
     <BundleResource Include="Resources\Pete_Dray.png" />
     <BundleResource Include="Resources\wellnet_logo_mini.png" />
+    <BundleResource Include="Resources\Excited.png" />
+    <BundleResource Include="Resources\Happy.png" />
+    <BundleResource Include="Resources\Sad.png" />
+    <BundleResource Include="Resources\Sick.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\doctor_nurse.png" />

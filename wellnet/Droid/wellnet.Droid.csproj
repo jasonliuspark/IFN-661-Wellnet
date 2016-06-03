@@ -98,6 +98,10 @@
     <AndroidResource Include="Resources\drawable\Doris_Morrison.png" />
     <AndroidResource Include="Resources\drawable\Pete_Dray.png" />
     <AndroidResource Include="Resources\drawable\wellnet_logo_mini.png" />
+    <AndroidResource Include="Resources\drawable\Sad.png" />
+    <AndroidResource Include="Resources\drawable\Sick.png" />
+    <AndroidResource Include="Resources\drawable\Excited.png" />
+    <AndroidResource Include="Resources\drawable\Happy.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Agenda.jpg" />

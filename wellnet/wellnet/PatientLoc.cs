@@ -20,6 +20,7 @@ namespace wellnet
         public const string patientMedicationPage = "PatientMedicationPage";
         public const string patientMoodMeterPage = "PatientMoodMeterPage";
 
+
         public PatientLoc()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
@@ -52,5 +53,10 @@ namespace wellnet
         {
             get { return ServiceLocator.Current.GetInstance<PatientMedicationPageViewModel>(); }
         }
+		public PatientMoodMeterPageViewModel PatientMeter
+		{
+			get { return ServiceLocator.Current.GetInstance<PatientMoodMeterPageViewModel>(); }
+		}
+
     }
 }

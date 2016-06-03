@@ -14,75 +14,137 @@ namespace wellnet.Views.PatientViews
         {
 			NavigationPage.SetTitleIcon (this,"wellnet_logo_mini.png");
             /* Draw Status Block */
-            /*
-            var MessageText = new Label()
-            {
-                Text = "Hello Wayne. Dorris is feeling HAPPY today. She has an appointment with Dr. Doe at 3pm.",
-                TextColor = Color.White,
-                BackgroundColor = Color.FromHex("2196F3"),
-
-                // BorderColor = Color.FromHex("4527A0"),
-                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label))
-            };
-
-            var imgMoodMeter = new Image { Aspect = Aspect.AspectFit };
-            {
-                imgMoodMeter.Source = ImageSource.FromFile("PatientMoods.png");
-            };
-
+            
+//            var MessageText = new Label()
+//            {
+//                Text = "Hello Wayne. Dorris is feeling HAPPY today. She has an appointment with Dr. Doe at 3pm.",
+//                TextColor = Color.White,
+//                BackgroundColor = Color.FromHex("2196F3"),
+//
+//                // BorderColor = Color.FromHex("4527A0"),
+//                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label))
+//            };
+//
+//            var imgMoodMeter = new Image { Aspect = Aspect.AspectFit };
+//            {
+//                imgMoodMeter.Source = ImageSource.FromFile("PatientMoods.png");
+//            };
+			BindingContext=App.PatientLoc.PatientMeter;
             var MoodMeter = new StackLayout()
             {
                 Spacing = 10,
                 Padding = 10,
                 VerticalOptions = LayoutOptions.FillAndExpand,
             };
+			Label happy, sad, excited, sick;
 
+			var displayMood = new Label (){
+
+				FontSize=Device.GetNamedSize(NamedSize.Large,typeof(Label)),
+				HorizontalOptions=LayoutOptions.Center
+			};
+
+			displayMood.SetBinding (Label.TextProperty,"MoodDisplay");
             /* fill the stack with buttons*/
             /*MoodMeter.Children.Add(imgMoodMeter);*/
-            Grid grid = new Grid();
-            grid.RowDefinitions.Add(new RowDefinition());
-            grid.ColumnDefinitions.Add(new ColumnDefinition());
+			Grid grid = new Grid{ ColumnSpacing=1,RowSpacing=1};
+			grid.RowDefinitions.Add(new RowDefinition{Height=new GridLength(1,GridUnitType.Star)}  );
+			grid.RowDefinitions.Add(new RowDefinition{Height=new GridLength(1,GridUnitType.Star)}  );
+			grid.RowDefinitions.Add(new RowDefinition{Height=new GridLength(1,GridUnitType.Star)}  );
+			grid.RowDefinitions.Add(new RowDefinition{Height=new GridLength(1,GridUnitType.Star)}  );
 
-            List<string> moodList = new List<string>();
-            moodList.Add("Happy.png");
-            moodList.Add("Excited.png");
-            moodList.Add("Sad.png");
-            moodList.Add("Sick.png");
+			grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (1, GridUnitType.Star)  });
+			grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (1, GridUnitType.Star)  });
+			grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (1, GridUnitType.Star)  });
 
-            var happyMoodImage = new Image { Aspect = Aspect.AspectFit };
-            happyMoodImage.Source = ImageSource.FromFile("Happy.png");
 
-            var sadMoodImage = new Image { Aspect = Aspect.AspectFit };
+			var happyMoodImage = new Image (); //{ Aspect = Aspect.AspectFit };
+			happyMoodImage.Source="Happy.png";
+
+			var sadMoodImage = new Image(); //{ Aspect = Aspect.AspectFit };
             sadMoodImage.Source = ImageSource.FromFile("Sad.png");
 
-            var excitedMoodImage = new Image { Aspect = Aspect.AspectFit };
+			var excitedMoodImage = new Image(); //{ Aspect = Aspect.AspectFit };
             excitedMoodImage.Source = ImageSource.FromFile("Excited.png");
 
-            var sickMoodImage = new Image { Aspect = Aspect.AspectFit };
+			var sickMoodImage = new Image(); //{ Aspect = Aspect.AspectFit };
             sickMoodImage.Source = ImageSource.FromFile("Sick.png");
 
+			Switch checkboxHappy = new Switch
+			{
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.CenterAndExpand
+			};
+
+			//non mvvm implementation
+				//checkboxHappy.SetBinding (Switch.BehaviorsProperty,"happytoggled");
+				
+
+			Switch checkboxSad = new Switch
+			{
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.CenterAndExpand
+			};
+
+			Switch checkboxExcited = new Switch
+			{
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.CenterAndExpand
+			};
+			Switch checkboxSick = new Switch
+			{
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.CenterAndExpand
+			};
+			//non mvvm toggled event 
+			checkboxHappy.Toggled += delegate(object sender, ToggledEventArgs e) {
+				if (checkboxHappy.IsToggled==true)
+				{displayMood.Text = "happy";}
+				else {
+					displayMood.Text="";
+				}		 
+			};
+
+			checkboxSad.Toggled += delegate(object sender, ToggledEventArgs e) {
+				if (checkboxSad.IsToggled==true)
+				{displayMood.Text = "sad";}
+				else {
+					displayMood.Text="";
+				}		 
+			};
+			checkboxExcited.Toggled += delegate(object sender, ToggledEventArgs e) {
+				if (checkboxExcited.IsToggled==true)
+				{displayMood.Text = "excited";}
+				else {
+					displayMood.Text="";
+				}		 
+			};
+			checkboxSick.Toggled += delegate(object sender, ToggledEventArgs e) {
+				if (checkboxSick.IsToggled==true)
+				{displayMood.Text = "sick";}
+				else {
+					displayMood.Text="";
+				}		 
+			};
 
             /* allocate icons to various parts of the grid */
             grid.Children.Add(happyMoodImage, 0, 0);
-            grid.Children.Add(new Label { Text = "Happy?" }, 1, 0);
+			grid.Children.Add(happy= new Label { Text = "Happy?" }, 1, 0);
             grid.Children.Add(sadMoodImage, 0, 1);
-            grid.Children.Add(new Label { Text = "Sad?" }, 1, 1);
+			grid.Children.Add(sad= new Label { Text = "Sad?" }, 1, 1);
             grid.Children.Add(excitedMoodImage, 0, 2);
-            grid.Children.Add(new Label { Text = "Excited?" }, 1, 2);
+            grid.Children.Add(excited=new Label { Text = "Excited?" }, 1, 2);
             grid.Children.Add(sickMoodImage, 0, 3);
-            grid.Children.Add(new Label { Text = "Sick?" }, 1, 3);
-
-
+			grid.Children.Add(sick= new Label { Text = "Sick?" }, 1, 3);
+			grid.Children.Add (checkboxHappy, 2, 0);
+			grid.Children.Add (checkboxSad, 2, 1);
+			grid.Children.Add (checkboxExcited, 2, 2);
+			grid.Children.Add (checkboxSick, 2, 3);
             /* check box */
-            Switch checkboxHappy = new Switch
-            {
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.CenterAndExpand
-            };
-            //checkboxHappy.Toggled += checkBoxToggled;
-
-
-            this.Content = grid;
+            
+			MoodMeter.Children.Add (grid);
+			MoodMeter.Children.Add (displayMood);
+			this.Content = MoodMeter;
         }
     }
 }
