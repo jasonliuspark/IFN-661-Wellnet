@@ -55,8 +55,8 @@ namespace wellnet
                 NewPtDetails.PtID = 0;
                 NewPtDetails.FirstName = "Doris";
                 NewPtDetails.LastName = "Morrison";
-                NewPtDetails.Age = 25;
-                NewPtDetails.DOB = "12/04/1991";
+                NewPtDetails.Age = 75;
+                NewPtDetails.DOB = "12/04/1941";
                 NewPtDetails.Gender = "Female";
                 NewPtDetails.AdmissionTime = "13/04/2015";
                 NewPtDetails.ContactNumber = 0434105253;
@@ -112,7 +112,7 @@ namespace wellnet
                 //testing, should be in drugHistry table
                 NewPtDetails2.DrugName = "Razadyne";
                 NewPtDetails2.Dosage = "500mg";
-                NewPtDetails2.DosingTime = "a.m.";
+				NewPtDetails2.DosingTime = "2/day";
                 NewPtDetails2.Strength = "weak";
                 //testing, should be in MedicalRecord table
                 NewPtDetails2.DoctorNotes = "take more care of heart";
@@ -148,7 +148,7 @@ namespace wellnet
 				//testing, should be in drugHistry table
 				NewPtDetails3.DrugName = "Razadyne";
 				NewPtDetails3.Dosage = "500mg";
-				NewPtDetails3.DosingTime = "a.m.";
+				NewPtDetails3.DosingTime = "2/day";
 				NewPtDetails3.Strength = "weak";
 				//testing, should be in MedicalRecord table
 				NewPtDetails3.DoctorNotes = "take more care of heart";
@@ -163,7 +163,7 @@ namespace wellnet
 				NewPtDetails4.LastName = "Johnson";
 				NewPtDetails4.Age = 52;
 				NewPtDetails4.DOB = "12/04/1966";
-				NewPtDetails4.Gender = "Feale";
+				NewPtDetails4.Gender = "Female";
 				NewPtDetails4.AdmissionTime = "13/04/2015";
 				NewPtDetails4.ContactNumber = 0434105253;
 				NewPtDetails4.Address = "1 Apple street 4000 QLD";
@@ -183,7 +183,7 @@ namespace wellnet
 				//testing, should be in drugHistry table
 				NewPtDetails4.DrugName = "Razadyne";
 				NewPtDetails4.Dosage = "500mg";
-				NewPtDetails4.DosingTime = "a.m.";
+				NewPtDetails4.DosingTime = "2/day";
 				NewPtDetails4.Strength = "weak";
 				//testing, should be in MedicalRecord table
 				NewPtDetails4.DoctorNotes = "take more care of heart";

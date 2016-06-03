@@ -17,22 +17,28 @@ Title="Patient Detail"
 	FontSize="22" TextColor="Black" Text="{Binding LastName}"/>
 	</StackLayout>
 
-<!--gender and age-->
+<!--Patient Mood-->
 	<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-		<StackLayout Orientation="Horizontal">
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="is feeling:"/>
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="{Binding PtMood}"/>
+	</StackLayout>
+
+<!--gender and age-->
+		<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 		<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
 		FontSize="19" TextColor="Gray" Text="Gender:"/>
 		<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
 		FontSize="19" TextColor="Gray" Text="{Binding Gender}"/>
 		</StackLayout>
 
-		<StackLayout Orientation="Horizontal">
+		<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 		<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
 		FontSize="19" TextColor="Gray" Text="Age:"/>
 		<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
 		FontSize="19" TextColor="Gray" Text="{Binding Age}"/>
 		</StackLayout>
-	</StackLayout>
 
 <!--Temperature and Blood Pressure-->
 	<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
@@ -64,12 +70,37 @@ Title="Patient Detail"
 	</StackLayout>
 
 <!--Past Disease-->
-<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+	<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
 		FontSize="19" TextColor="Gray" Text="Past Disease:"/>
 	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
 		FontSize="19" TextColor="Gray" Text="{Binding PastDisease}"/>
 	</StackLayout>
+
+<!--Current Drug Usage-->
+
+	<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="Drug:"/>
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="{Binding DrugName}"/>
+	</StackLayout>
+
+	<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="{Binding Dosage}"/>
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="{Binding DosingTime}"/>
+	</StackLayout>
+
+<!--Doctor notes-->
+	<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="Notes:"/>
+	<Label FontFamily="HelveticaNeue-Medium" FontAttributes="Bold"
+		FontSize="19" TextColor="Gray" Text="{Binding DoctorNotes}"/>
+	</StackLayout>
+
 
 <!--Ward info-->
 	<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
