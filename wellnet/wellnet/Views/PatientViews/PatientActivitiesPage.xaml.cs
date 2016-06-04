@@ -49,13 +49,40 @@ namespace wellnet.Views.PatientViews
                 "12:00AM Lunch with Beth",
                 "5:00PM Take Medication"
             };*/
-			/* uncomment this to compile xaml */
+            /* uncomment this to compile xaml */
             //InitializeComponent();
-			BindingContext = App.PatientLoc.PatientActivities;
+            /* stack layout */
+            DayOfWeek currentTime = DateTime.Now.DayOfWeek;
+            var ActivitiesPage = new StackLayout()
+            {
+                // Remove Extra spacing from the top of the page
+                Padding = 10,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                HorizontalOptions = LayoutOptions.Center
+            };
+            Label activitiesTitle = new Label()
+            {
+                Text = String.Format("Activities Today ({0}):", currentTime),
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+                TextColor = Color.Accent,
+                HorizontalOptions = LayoutOptions.Center,
+            };
+
+            BindingContext = App.PatientLoc.PatientActivities;
 
 			ListView ptactivity = new ListView ();
+            
 			ptactivity.SetBinding (ListView.ItemsSourceProperty,"PatientActivities");
-			this.Content = ptactivity;
+            StackLayout patientActivities = new StackLayout()
+            {
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.Center
+            };
+
+            patientActivities.Children.Add(ptactivity);
+            ActivitiesPage.Children.Add(activitiesTitle);
+            ActivitiesPage.Children.Add(patientActivities);
+			this.Content = ActivitiesPage;
         }
     }
 

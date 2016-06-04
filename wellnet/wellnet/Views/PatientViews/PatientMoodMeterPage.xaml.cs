@@ -38,10 +38,20 @@ namespace wellnet.Views.PatientViews
             };
 			Label happy, sad, excited, sick;
 
+            /* Label for display purpose of page */
+            Label patientQuestion = new Label()
+            {
+                Text = "How are you feeling today?",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+                HorizontalOptions = LayoutOptions.Center,
+                TextColor=Color.Accent
+            };
+
 			var displayMood = new Label (){
 
-				FontSize=Device.GetNamedSize(NamedSize.Large,typeof(Label)),
-				HorizontalOptions=LayoutOptions.Center
+				FontSize=Device.GetNamedSize(NamedSize.Medium,typeof(Label)),
+				HorizontalOptions=LayoutOptions.Center,
+                TextColor=Color.Accent
 			};
 
 			displayMood.SetBinding (Label.TextProperty,"MoodDisplay");
@@ -99,7 +109,7 @@ namespace wellnet.Views.PatientViews
 			//non mvvm toggled event 
 			checkboxHappy.Toggled += delegate(object sender, ToggledEventArgs e) {
 				if (checkboxHappy.IsToggled==true)
-				{displayMood.Text = "happy";}
+				{displayMood.Text = "Your mood today is happy.";}
 				else {
 					displayMood.Text="";
 				}		 
@@ -107,21 +117,21 @@ namespace wellnet.Views.PatientViews
 
 			checkboxSad.Toggled += delegate(object sender, ToggledEventArgs e) {
 				if (checkboxSad.IsToggled==true)
-				{displayMood.Text = "sad";}
+				{displayMood.Text = "Your mood today is sad.";}
 				else {
 					displayMood.Text="";
 				}		 
 			};
 			checkboxExcited.Toggled += delegate(object sender, ToggledEventArgs e) {
 				if (checkboxExcited.IsToggled==true)
-				{displayMood.Text = "excited";}
+				{displayMood.Text = "You are excited today!";}
 				else {
 					displayMood.Text="";
 				}		 
 			};
 			checkboxSick.Toggled += delegate(object sender, ToggledEventArgs e) {
 				if (checkboxSick.IsToggled==true)
-				{displayMood.Text = "sick";}
+				{displayMood.Text = "You are not feeling very well today.";}
 				else {
 					displayMood.Text="";
 				}		 
@@ -129,19 +139,48 @@ namespace wellnet.Views.PatientViews
 
             /* allocate icons to various parts of the grid */
             grid.Children.Add(happyMoodImage, 0, 0);
-			grid.Children.Add(happy= new Label { Text = "Happy?" }, 1, 0);
+			grid.Children.Add(happy= new Label
+            {
+                Text = "Happy?",
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+                TextColor=Color.Accent
+            }, 1, 0);
             grid.Children.Add(sadMoodImage, 0, 1);
-			grid.Children.Add(sad= new Label { Text = "Sad?" }, 1, 1);
+			grid.Children.Add(sad= new Label
+            {
+                Text = "Sad?",
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+                TextColor = Color.Accent
+            }, 1, 1);
             grid.Children.Add(excitedMoodImage, 0, 2);
-            grid.Children.Add(excited=new Label { Text = "Excited?" }, 1, 2);
+            grid.Children.Add(excited=new Label
+            {
+                Text = "Excited?",
+                HorizontalOptions =LayoutOptions.Center,
+                VerticalOptions =LayoutOptions.Center,
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+                TextColor = Color.Accent
+            }, 1, 2);
             grid.Children.Add(sickMoodImage, 0, 3);
-			grid.Children.Add(sick= new Label { Text = "Sick?" }, 1, 3);
+			grid.Children.Add(sick= new Label
+            {
+                Text = "Sick?",
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+                TextColor = Color.Accent
+            }, 1, 3);
 			grid.Children.Add (checkboxHappy, 2, 0);
 			grid.Children.Add (checkboxSad, 2, 1);
 			grid.Children.Add (checkboxExcited, 2, 2);
 			grid.Children.Add (checkboxSick, 2, 3);
             /* check box */
-            
+
+            MoodMeter.Children.Add(patientQuestion);
 			MoodMeter.Children.Add (grid);
 			MoodMeter.Children.Add (displayMood);
 			this.Content = MoodMeter;
