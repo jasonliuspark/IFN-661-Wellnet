@@ -65,8 +65,8 @@
     <Compile Include="Views\PatientViews\PatientMoodMeterPage.xaml.cs">
       <DependentUpon>PatientMoodMeterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PatientViews\PatientMoodPage.xaml.cs">
-      <DependentUpon>PatientMoodPage.xaml</DependentUpon>
+    <Compile Include="Views\PatientViews\PatientMainPage.xaml.cs">
+      <DependentUpon>PatientMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="wellnet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,7 +156,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\PatientViews\PatientMoodPage.xaml">
+    <EmbeddedResource Include="Views\PatientViews\PatientMainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
