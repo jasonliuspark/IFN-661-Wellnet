@@ -13,6 +13,7 @@ x:Class="wellnet.StartupMenu" Title="Start Menu">
 	BorderWidth="2" BorderColor="Blue" Font="Large"
 	Command="{Binding doc_buttonCommand}"/>-->
 	<Image x:Name="wellnetLogo" Source="WellNetLogo.png"></Image>
+    
     <Image x:Name="patient" Source="resident.png">
    <Image.GestureRecognizers>
         <TapGestureRecognizer Command="{Binding patientButtonCommand}"/>

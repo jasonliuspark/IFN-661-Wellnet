@@ -17,7 +17,7 @@ namespace wellnet
             {
                 Text = "Hello Dorris!",
                 TextColor = Color.Accent,
-                BackgroundColor = Color.FromHex("2196F3"),
+                BackgroundColor = Color.FromHex("FFFFFF"),
                 HorizontalOptions = LayoutOptions.Center,
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label))
             };
@@ -29,7 +29,7 @@ namespace wellnet
             var BtnPatientMedication = new Button()
             {
                 Image = imgBtnPatientMedication,
-                BackgroundColor = Color.FromHex("673AB7"),
+                BackgroundColor = Color.FromHex("FFFFFF"),
                 BorderRadius = 2,
                 BorderWidth = 2,
                 BorderColor = Color.FromHex("4527A0"),
@@ -44,7 +44,7 @@ namespace wellnet
             var BtnPatientActivities = new Button()
             {
                 Image = imgBtnPatientActivities,
-                BackgroundColor = Color.FromHex("2196F3"),
+                BackgroundColor = Color.FromHex("FFFFFF"),
                 BorderRadius = 2,
                 BorderWidth = 2,
                 BorderColor = Color.FromHex("1565C0"),
@@ -59,7 +59,7 @@ namespace wellnet
             var BtnPatientMoodMeter = new Button()
             {
                 Image = imgBtnPatientMoodMeter,
-                BackgroundColor = Color.FromHex("4CAF50"),
+                BackgroundColor = Color.FromHex("FFFFFF"),
                 BorderRadius = 2,
                 BorderWidth = 2,
                 BorderColor = Color.FromHex("2E7D32"),
@@ -74,14 +74,16 @@ namespace wellnet
             var BtnPatientCallStaff = new Button()
             {
                 Image = imgBtnPatientCallStaff,
-                BackgroundColor = Color.FromHex("4CAF50"),
+                BackgroundColor = Color.FromHex("FFFFFF"),
                 BorderRadius = 2,
                 BorderWidth = 2,
-                BorderColor = Color.FromHex("2E7D32"),
+                BorderColor = Color.FromHex("C62828"),
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center
             };
-
+         
+            BtnPatientCallStaff.Clicked += OnButtonPressed;
+            
 
             ///* draw button stack */
             var DorisMenuStack = new StackLayout()
@@ -104,5 +106,9 @@ namespace wellnet
             BindingContext = App.PatientLoc.PatientMood ;
 
         }
+        void OnButtonPressed(object sender, EventArgs ea)
+        {
+            DisplayAlert("Alertbox", "Medical Staff have been called. Please remain calm.", "Ok");
+            }
     }
 }
