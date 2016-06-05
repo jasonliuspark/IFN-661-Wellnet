@@ -75,6 +75,7 @@ namespace wellnet.Views.PatientViews
 			ptactivity.SetBinding (ListView.ItemsSourceProperty,"PatientActivities");
             StackLayout patientActivities = new StackLayout()
             {
+                Padding = new Thickness(10, 10, 10, 10),
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.Center
             };
