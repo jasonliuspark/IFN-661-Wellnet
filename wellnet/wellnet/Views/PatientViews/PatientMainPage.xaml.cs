@@ -83,7 +83,15 @@ namespace wellnet
             };
          
             BtnPatientCallStaff.Clicked += OnButtonPressed;
-            
+            /* new stack layout for resizing the button */
+            StackLayout callStaffButtonLayout = new StackLayout()
+            { 
+                //Padding = new Thickness(10, 10, 10, 10),
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+            callStaffButtonLayout.Children.Add(BtnPatientCallStaff);
+
 
             ///* draw button stack */
             var DorisMenuStack = new StackLayout()
@@ -100,7 +108,7 @@ namespace wellnet
             DorisMenuStack.Children.Add(BtnPatientMedication);
             DorisMenuStack.Children.Add(BtnPatientActivities);
             DorisMenuStack.Children.Add(BtnPatientMoodMeter);
-            DorisMenuStack.Children.Add(BtnPatientCallStaff);
+            DorisMenuStack.Children.Add(callStaffButtonLayout);
             /* fill the content page*/
             this.Content = DorisMenuStack;
             BindingContext = App.PatientLoc.PatientMood ;
